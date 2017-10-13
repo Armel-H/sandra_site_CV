@@ -1,6 +1,6 @@
 <?php
 require('connexion.php');
-$resultat = $pdoCV -> query("SELECT * FROM t_utilisateur");
+$resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
 $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 ?>
 <?php
@@ -36,7 +36,7 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
         <p>Texte</p>
         <hr>
         <?php
-        $resultat = $pdoCV -> prepare("SELECT * FROM t_competences");
+        $resultat = $pdoCV -> prepare("SELECT * FROM t_competences WHERE utilisateur_id = '1'");
         $resultat -> execute();
         $nbr_competences = $resultat->rowCount();
         //$ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
@@ -56,7 +56,7 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
                 <td><?php echo $ligne_competence['competence'] ;?></td>
                 <td><?php echo $ligne_competence['c_niveau']; ?></td>
                 <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">supprimer</a></td>
-                <td><a href="#">modifier</a></td>
+                <td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">modifier</a></td>
             </tr>
         <?php } ?>
         </table>

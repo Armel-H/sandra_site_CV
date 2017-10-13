@@ -1,6 +1,6 @@
 <?php
 require('connexion.php');
-$resultat = $pdoCV -> query("SELECT * FROM t_utilisateur");
+$resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
 $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
         $ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
         ?>
 
-        <h2>Les compétences</h2>
+        <h2>ACCUEIL admin</h2>
 
     </body>
 </html>
