@@ -1,3 +1,4 @@
+
 <?php
 require('connexion.php');
 $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
