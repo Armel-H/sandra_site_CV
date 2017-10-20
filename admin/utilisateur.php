@@ -63,24 +63,24 @@ if(isset($_GET['id_utilisateur'])) {// ferme le if(isset) // Ici on récupère l
                 <th>Site Web : <?php echo $ligne_utilisateur['site_web']; ?></th>
             </tr>
             <tr>
-                <?php while($ligne_utilisteur = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
-                <td><?php echo $ligne_utilisateur['utilisateur'] ;?></td>
-                <td><?php echo $ligne_utilisateur['nom']; ?></td>
-                <td><?php echo $ligne_utilisateur['prenom']; ?></td>
-                <td><?php echo $ligne_utilisateur['email']; ?></td>
-                <td><?php echo $ligne_utilisateur['telephone']; ?></td>
-                <td><?php echo $ligne_utilisateur['pseudo']; ?></td> -->
-                <td><?php echo $ligne_utilisateur['avatar']; ?></td>
-                <td><?php echo $ligne_utilisateur['age']; ?></td>
-                <td><?php echo $ligne_utilisateur['date_de_naissance']; ?></td>
-                <td><?php echo $ligne_utilisateur['etat_civil']; ?></td>
-                <td><?php echo $ligne_utilisateur['adresse']; ?></td>
-                <td><?php echo $ligne_utilisateur['code_postal']; ?></td>
-                <td><?php echo $ligne_utilisateur['ville']; ?></td>
-                <td><?php echo $ligne_utilisateur['pays']; ?></td>
-                <td><?php echo $ligne_utilisateur['site_web']; ?></td>
-
-            </tr>
+            <?php while($ligne_utilisteur = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
+            <td><?php echo $ligne_utilisateur['utilisateur'] ;?></td>
+            <td><?php echo $ligne_utilisateur['nom']; ?></td>
+            <td><?php echo $ligne_utilisateur['prenom']; ?></td>
+            <td><?php echo $ligne_utilisateur['email']; ?></td>
+            <td><?php echo $ligne_utilisateur['telephone']; ?></td>
+            <td><?php echo $ligne_utilisateur['pseudo']; ?></td> -->
+            <td><?php echo $ligne_utilisateur['avatar']; ?></td>
+            <td><?php echo $ligne_utilisateur['age']; ?></td>
+            <td><?php echo $ligne_utilisateur['date_de_naissance']; ?></td>
+            <td><?php echo $ligne_utilisateur['etat_civil']; ?></td>
+            <td><?php echo $ligne_utilisateur['adresse']; ?></td>
+            <td><?php echo $ligne_utilisateur['code_postal']; ?></td>
+            <td><?php echo $ligne_utilisateur['ville']; ?></td>
+            <td><?php echo $ligne_utilisateur['pays']; ?></td>
+            <td><?php echo $ligne_utilisateur['site_web']; ?></td>
+        </tr>
+            
         <?php } ?>
         </table>
         <hr>

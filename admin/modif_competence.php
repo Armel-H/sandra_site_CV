@@ -9,7 +9,7 @@ if(isset($_POST['competence'])){//par le nom du premier input
     $id_competence = $_POST['id_competence'];
 
     $pdoCV->exec("UPDATE t_competences SET competence = '$competence', c_niveau ='$c_niveau' WHERE id_competence = '$id_competence'");
-    header ('location: competences.php');
+    // header ('location: competences.php');
     exit();
 }
 //je récupère la compétence.

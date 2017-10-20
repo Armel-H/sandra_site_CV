@@ -1,4 +1,3 @@
-
 <?php
 require('connexion.php');
 $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
@@ -24,54 +23,111 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
     $pdoCV->query($resultat);
     header("location: competences.php");
 }// Ferme le if(isset)
-
+ 
  ?>
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Admin : <?= $ligne_utilisateur['pseudo']; ?> </title>
-    </head>
-    <body>
-        <h1>Admin <?= $ligne_utilisateur['prenom']; ?></h1>
-        <p>Texte</p>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+     <!-- nav en include -->
+     <?php include("include_nav.php"); ?>
+     <div class="alert alert-info center" role="alert">
+    <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
+    </div>
+    <?php
+    $resultat = $pdoCV -> prepare("SELECT * FROM t_competences WHERE utilisateur_id = '1'");
+    $resultat -> execute();
+    $nbr_competences = $resultat->rowCount();
+    //$ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
+    ?>
+    <div class="container">
+                    <!-- On rows -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">compétences</h3>
+                  </div>
+                  <div class="panel-body">
+                      <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Compétences</th>
+                        <th>Niveaux</th>
+                        <th>Modification</th>
+                        <th>Suppression</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <?php while($ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
+                        <td><?php echo $ligne_competence['competence'] ;?></td>
+                        <td><?php echo $ligne_competence['c_niveau']; ?></td>
+                        <td><a href="competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">modifier</a></td>
+                        <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">supprimer</a></td>
+                    </tr>
+                <?php } ?>
+                  </tbody>
+                  </table>
+                  </div>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"></h3>
+                  </div>
+                  <div class="panel-body">
+                <form action="modif_competence.php" method="post"> 
+                          <label for="competence">Compétence</label>
+                          <input type="text" name="competence" value="<?php echo ($ligne_competence['competence']); ?>">
+                          <input type="number" name="c_niveau" value="<?php echo ($ligne_competence['c_niveau']); ?>">
+                          <input hidden name="id_competence" value="<?php echo ($ligne_competence['id_competence']); ?>">
+                          <input type="submit" value="mettre à jour">
+                  </div>
+                </div>
+            </div>
+        </div>    
         <hr>
         <?php
-        $resultat = $pdoCV -> prepare("SELECT * FROM t_competences WHERE utilisateur_id = '1'");
-        $resultat -> execute();
-        $nbr_competences = $resultat->rowCount();
-        //$ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
+        $resultat = $pdoCV -> query("SELECT * FROM t_competences");
+        $ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
         ?>
+    <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+          <div class="panel-footer">Panel footer</div>
+            </div>
+      </div>
+  </div>
+  </footer
 
-        <h2>J'ai <?php echo $nbr_competences; ?> super compétences</h2>
-
-        <table border="3">
-            <tr>
-                <th>Compétences</th>
-                <th>Niveaux</th>
-                <th>Suppression</th>
-                <th>Modification</th>
-            </tr>
-            <tr>
-                <?php while($ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
-                <td><?php echo $ligne_competence['competence'] ;?></td>
-                <td><?php echo $ligne_competence['c_niveau']; ?></td>
-                <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">supprimer</a></td>
-                <td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">modifier</a></td>
-            </tr>
-        <?php } ?>
-        </table>
-        <hr>
-        <h3>Insertion d'une compétence</h3>
-        <!--Formulaire d'insertion -->
-
-        <form action="competences.php" method="post">
-            <label for="competence">compétence</label>
-            <input type="text" name="competence" id="competence" placeholder="Insérez une compétence">
-            <input type="text" name="c_niveau" id="c_niveau" placeholder="Insérez le niveau">
-            <input type="submit"name="Insérez">
-
-        </form>
+        </div>
+        </div>
+    </div>
 
     </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </html>
