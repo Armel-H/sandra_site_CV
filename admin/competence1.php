@@ -5,6 +5,7 @@ $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = 
 $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 ?>
 <?php
+//comment
 // gestion des contenus de la BDD
 // Insertion des compétences
 if(isset($_POST['competence'])) {// Si on a  posté une nouvelle compétence.
