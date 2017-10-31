@@ -46,33 +46,33 @@ if(isset($_GET['id_utilisateur'])) {// ferme le if(isset) // Ici on récupère l
 
         <table border="3">
             <tr>
-                <th>Prénom : <?php echo $ligne_utilisateur['prenom']; ?></th>
-                <th>Nom : <?php echo $ligne_utilisateur['nom']; ?></th><br>
-                <th>Email : <?php echo $ligne_utilisateur['email']; ?></th>
-                <th>Téléphone : <?php echo $ligne_utilisateur['telephone']; ?></th>
-                <th>Pseudo : <?php echo $ligne_utilisateur['pseudo']; ?></th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Pseudo</th>
                 <th>Avatar</th>
-                <th>Age : <?php echo $ligne_utilisateur['age']; ?></th>
-                <th>Date de naissance : <?php echo $ligne_utilisateur['date_de_naissance']; ?></th>
-                <th>Sexe : <?php echo $ligne_utilisateur['sexe']; ?></th>
-                <th>Etat Civil : <?php echo $ligne_utilisateur['etat_civil']; ?></th>
-                <th>Adresse : <?php echo $ligne_utilisateur['adresse']; ?></th>
-                <th>Code Postal : <?php echo $ligne_utilisateur['code_postal']; ?></th>
-                <th>Ville : <?php echo $ligne_utilisateur['ville']; ?></th>
-                <th>Pays : <?php echo $ligne_utilisateur['pays']; ?></th>
-                <th>Site Web : <?php echo $ligne_utilisateur['site_web']; ?></th>
+                <th>Age</th>
+                <th>Date de naissancessance</th>
+                <th>Sexe</th>
+                <th>Etat Civil</th>
+                <th>Adresse</th>
+                <th>Code Postal</th>
+                <th>Ville</th>
+                <th>Pays</th>
+                <th>Site Web</th>
             </tr>
             <tr>
-            <?php while($ligne_utilisteur = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
-            <td><?php echo $ligne_utilisateur['utilisateur'] ;?></td>
-            <td><?php echo $ligne_utilisateur['nom']; ?></td>
+
             <td><?php echo $ligne_utilisateur['prenom']; ?></td>
+            <td><?php echo $ligne_utilisateur['nom']; ?></td>
             <td><?php echo $ligne_utilisateur['email']; ?></td>
             <td><?php echo $ligne_utilisateur['telephone']; ?></td>
             <td><?php echo $ligne_utilisateur['pseudo']; ?></td> -->
             <td><?php echo $ligne_utilisateur['avatar']; ?></td>
             <td><?php echo $ligne_utilisateur['age']; ?></td>
             <td><?php echo $ligne_utilisateur['date_de_naissance']; ?></td>
+            <td><?php echo $ligne_utilisateur['sexe']; ?></td>
             <td><?php echo $ligne_utilisateur['etat_civil']; ?></td>
             <td><?php echo $ligne_utilisateur['adresse']; ?></td>
             <td><?php echo $ligne_utilisateur['code_postal']; ?></td>
@@ -80,8 +80,8 @@ if(isset($_GET['id_utilisateur'])) {// ferme le if(isset) // Ici on récupère l
             <td><?php echo $ligne_utilisateur['pays']; ?></td>
             <td><?php echo $ligne_utilisateur['site_web']; ?></td>
         </tr>
-            
-        <?php } ?>
+
+
         </table>
         <hr>
         <!-- <h3>Insertion d'une compétence</h3> -->
