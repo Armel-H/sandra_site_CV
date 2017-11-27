@@ -1,7 +1,18 @@
 
 <?php
 require('connexion.php');
-$resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
+session_start();//à mettre dans toutes les pages de l'admin (même cette page)
+  if(isset($_SESSION['connexion']) && $_SESSION['connexion']=='connecté'){//on établit que la variable de session est passée et contient bien le terme "connexion"
+    $id_utilisateur=$_SESSION['id_utilisateur'];
+    $prenom=$_SESSION['prenom'];
+    $nom=$_SESSION['nom'];
+    //echo $_SESSION['connexion'];
+    //var_dump('$_SESSION');
+  }else{//l'utilisateur n'est pas connecté
+    header('location : authentification1.php');
+  }// ferme le else du if isset
+
+$resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
 $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 ?>
 <?php

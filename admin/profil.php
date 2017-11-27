@@ -10,6 +10,9 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
   }else{//l'utilisateur n'est pas connecté
     header('location : authentification1.php');
   }// ferme le else du if isset
+
+$resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
+$ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +22,6 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <?php
-    $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
-    $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
-    ?>
     <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
 
     <!-- Bootstrap -->
@@ -44,7 +43,7 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
     <div class="container">
                     <!-- On rows -->
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <h3 class="panel-title">Profil</h3>
@@ -54,24 +53,42 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>#</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1,001</td>
-                    <td>Lorem</td>
-                    <td>ipsum</td>
-                    <td>dolor</td>
-                    <td>sit</td>
-                  </tr>
+                    <table border="3">
+                        <tr>
+                            <th>Prénom</th>
+                            <th>Nom</th>
+                            <th>Email</th>
+                            <th>Téléphone</th>
+                            <th>Pseudo</th>
+                            <th>Avatar</th>
+                            <th>Age</th>
+                            <th>Date de naissancessance</th>
+                            <th>Sexe</th>
+                            <th>Etat Civil</th>
+                            <th>Adresse</th>
+                            <th>Code Postal</th>
+                            <th>Ville</th>
+                            <th>Pays</th>
+                            <th>Site Web</th>
+                        </tr>
+                        <tr>
 
-                  </tbody>
-
+                        <td><?php echo $ligne_utilisateur['prenom']; ?></td>
+                        <td><?php echo $ligne_utilisateur['nom']; ?></td>
+                        <td><?php echo $ligne_utilisateur['email']; ?></td>
+                        <td><?php echo $ligne_utilisateur['telephone']; ?></td>
+                        <td><?php echo $ligne_utilisateur['pseudo']; ?></td>
+                        <td><?php echo $ligne_utilisateur['avatar']; ?></td>
+                        <td><?php echo $ligne_utilisateur['age']; ?></td>
+                        <td><?php echo $ligne_utilisateur['date_de_naissance']; ?></td>
+                        <td><?php echo $ligne_utilisateur['sexe']; ?></td>
+                        <td><?php echo $ligne_utilisateur['etat_civil']; ?></td>
+                        <td><?php echo $ligne_utilisateur['adresse']; ?></td>
+                        <td><?php echo $ligne_utilisateur['code_postal']; ?></td>
+                        <td><?php echo $ligne_utilisateur['ville']; ?></td>
+                        <td><?php echo $ligne_utilisateur['pays']; ?></td>
+                        <td><?php echo $ligne_utilisateur['site_web']; ?></td>
+                    </tr>
                   </table>
                   </div>
 
@@ -104,8 +121,8 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
 
     <hr>
     <?php
-    //$resultat = $pdoCV -> query("SELECT * FROM t_competences");
-    //$ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
+    $resultat = $pdoCV -> query("SELECT * FROM t_competences");
+    $ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
     ?>
 
 
