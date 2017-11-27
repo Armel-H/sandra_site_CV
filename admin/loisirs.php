@@ -47,6 +47,8 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style_admin.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,7 +60,6 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
 <body>
     <!-- nav en include -->
     <?php include("include_nav.php"); ?>
-    <div class="alert alert-info center" role="alert">
         <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
     </div>
     <?php
@@ -110,7 +111,7 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
                     <div class="panel-body">
                         <form action="loisirs.php" method="post">
                             <div class="form-group">
-                                <label for="realisation">Loisir</label>
+                                <label for="loisir">Loisir</label>
                                 <input type="text" name="loisir" id="loisir" class="form-control"  >
                             </div>
                             <!--<div class="form-group">

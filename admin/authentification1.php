@@ -17,15 +17,17 @@ if(isset($_POST['connexion'])){// on envoie le formulaire avec le nom du bouton,
           $_SESSION['id_utilisateur']=$ligne_utilisateur['id_utilisateur'];
           $_SESSION['prenom']=$ligne_utilisateur['prenom'];
           $_SESSION['nom']=$ligne_utilisateur['nom'];
-          header('location: profil.php');
+          header('location: index.php');
      }// ferme le if else
 
-}// ferme li if isset
+}// ferme le if isset
  ?>
  <!DOCTYPE html>
  <html>
      <head>
          <meta charset="utf-8">
+         <link href="css/style_admin.css" rel="stylesheet">
+
          <title>Authentification </title>
      </head>
      <body>

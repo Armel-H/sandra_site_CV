@@ -8,7 +8,7 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
     //echo $_SESSION['connexion'];
     //var_dump('$_SESSION');
   }else{//l'utilisateur n'est pas connecté
-    header('location : authentification1.php');
+    header('location : index.php');
   }// ferme le else du if isset
 
 $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
@@ -26,6 +26,8 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style_admin.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +39,6 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
   <body>
      <!-- nav en include -->
      <?php include("include_nav.php"); ?>
-     <div class="alert alert-info center" role="alert">
     <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
     </div>
     <div class="container">
@@ -126,6 +127,13 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     ?>
 
 
+    
+
+
+    </div>
+    </div>
+  </div>
+    </body>
     <footer>
     <div class="container">
         <div class="row">
@@ -136,11 +144,6 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
   </div>
   </footer
 
-
-    </div>
-    </div>
-  </div>
-    </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -39,9 +39,9 @@ if(isset($_GET['id_formation'])){
     header("location: formation.php");
 } // ferme le if isset supression
 
-$resultat = $pdoCV -> prepare("SELECT * FROM t_formations WHERE utilisateur_id = '1'");
-$resultat -> execute();
-$nbr_formation =  $resultat -> rowCount();
+//$resultat = $pdoCV -> prepare("SELECT * FROM t_formations WHERE utilisateur_id = '1'");
+//$resultat -> execute();
+//$nbr_formation =  $resultat -> rowCount();
 
 ?>
 <!DOCTYPE html>
@@ -54,6 +54,8 @@ $nbr_formation =  $resultat -> rowCount();
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style_admin.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -65,7 +67,6 @@ $nbr_formation =  $resultat -> rowCount();
 <body>
     <!-- nav en include -->
     <?php include("include_nav.php"); ?>
-    <div class="alert alert-info center" role="alert">
         <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
     </div>
     <?php
@@ -76,23 +77,14 @@ $nbr_formation =  $resultat -> rowCount();
     ?>
     <div class="container">
         <div class="row">
-            <h1><?= $ligne_utilisateur['prenom']?></h1>
-            <!-- <h2>Admin Baba</h2> -->
         </div>
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <p> Il y a <?php if ($nbr_formation <= 1){
-                            echo $nbr_formation.' formation';
-                        }else{
-                            echo $nbr_formation.' formation';
-                        }?></p>
-                    </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <p>Liste des formations</p>
+                        <h3>Liste des formations</h3>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -112,8 +104,8 @@ $nbr_formation =  $resultat -> rowCount();
                                         <td><?php echo $ligne_formation['f_soustitre'] ;?></td>
                                         <td><?php echo $ligne_formation['f_dates'] ;?></td>
                                         <td><?php echo $ligne_formation['f_description'] ;?></td>
-                                        <td><a href="modif_formation.php?id_formation=<?= $ligne_formation['id_formation']; ?>"><button type="button" class="btn btn-success">Modifier</button></a></td>
-                                        <td><a href="formations.php?id_formation=<?= $ligne_formation['id_formation']; ?>"><button type="button" class="btn btn-danger">Supprimer</button></a></td>
+                                        <td><a href="modif_formation.php?id_formation=<?= $ligne_formation['id_formation']; ?>">Modifier</a></td>
+                                        <td><a href="formation.php?id_formation=<?= $ligne_formation['id_formation']; ?>">Supprimer</a></td>
                                     </tr>
                                 <?php } ?>
                             </table>
@@ -146,7 +138,7 @@ $nbr_formation =  $resultat -> rowCount();
                                 <textarea class="form-control" id="f_description" name="f_description" placeholder="Décrire la formation"></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-info btn-block">Submit</button>
+                            <button type="submit" class="btn btn-info btn-block">Envoyer</button>
                         </form>
                     </div>
                 </div>
@@ -182,5 +174,3 @@ $nbr_formation =  $resultat -> rowCount();
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 </html>
-
-<script src="js/bootstrap.min.js"></script>

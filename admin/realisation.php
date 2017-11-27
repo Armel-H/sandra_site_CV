@@ -17,7 +17,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 <?php
 //comment
 // gestion des contenus de la BDD
-// Insertion des compétences
+// Insertion des realisations
 if(isset($_POST['realisation'])) {// Si on a  posté une nouvelle compétence.
     if(!empty($_POST['realisation'])){// si compétence n'est aps vide.
         $realisation = addslashes($_POST['realisation']);
@@ -27,7 +27,7 @@ if(isset($_POST['realisation'])) {// Si on a  posté une nouvelle compétence.
     }// Ferme le if(!empty)
 }// ferme le if(isset)du formulaire
 
-// Suppréssion d'une compétence
+// Suppréssion d'une realisation
 if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère la competence par son id_ ds l'URL
     $efface = $_GET['id_realisation'];
     $resultat = "DELETE FROM t_realisations WHERE id_realisation ='$efface'";
@@ -46,6 +46,8 @@ if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère l
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style_admin.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -57,7 +59,6 @@ if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère l
 <body>
     <!-- nav en include -->
     <?php include("include_nav.php"); ?>
-    <div class="alert alert-info center" role="alert">
         <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
     </div>
     <?php
@@ -72,7 +73,7 @@ if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère l
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">réalisations</h3>
+                        <h3 class="panel-title">Réalisations</h3>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -92,24 +93,21 @@ if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère l
                                             <td><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>">modifier</a></td>
                                         </tr>
                                     <?php } ?>
-
                                 </tbody>
-
                             </table>
                         </div>
-
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Insérer une réalisation</h3>
+                        <h3 class="panel-title">Insérer une realisation</h3>
                     </div>
                     <div class="panel-body">
                         <form action="realisation.php" method="post">
                             <div class="form-group">
-                                <label for="realisation">Réalisation</label>
+                                <label for="realisation">réalisation</label>
                                 <input type="text" name="realisation" id="realisation" class="form-control"  >
                             </div>
                             <!--<div class="form-group">
@@ -117,7 +115,7 @@ if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère l
                                 <input type="text" name="c_niveau" id="c_niveau" class="form-control">
                             </div>!-->
                             <div class="form-group">
-                                <button type="submit" value="Insérez" class="btn btn-warning btn-block">Envoyez</button>
+                                <button type="submit" class="btn btn-warning btn-block">Envoyez svp</button>
                             </div>
                         </form>
                     </div>
@@ -127,8 +125,8 @@ if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère l
 
             <hr>
             <?php
-            $resultat = $pdoCV -> query("SELECT * FROM t_realisations");
-            $ligne_realisation = $resultat -> fetch(PDO::FETCH_ASSOC);
+            $resultat = $pdoCV -> query("SELECT * FROM t_loisir");
+            $ligne_loisir = $resultat -> fetch(PDO::FETCH_ASSOC);
             ?>
 
 
