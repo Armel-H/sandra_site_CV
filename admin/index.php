@@ -10,17 +10,7 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
   }else{//l'utilisateur n'est pas connecté
     header('location : authentifier1.php');
   }// ferme le else du if isset
-  // pour se déconnecter de l'admin (à mettre dans toutes les pages aussi)
-  if(isset($_GET['quitter'])){// on récupère le terme quitter dans l'URL
-    $_SESSION['connexion']='';// On vide les variables de session
-    $_SESSION['id_utilisateur']='';
-    $_SESSION['prenom']='';
-    $_SESSION['nom']='';
 
-        unset($_SESSION['connexion']);//UNSET détruit les variables qui ont été définies.
-        session_destroy();
-        header('location:../index.html');
-  }// fermeture du if(isset de la déconnexion)
 ?>
 
 <!DOCTYPE html>
@@ -29,29 +19,24 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <?php
     $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
     $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     ?>
-    <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
+    <title><?= $ligne_utilisateur['pseudo']; ?></title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style_admin.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
   </head>
   <body>
      <!-- nav en include -->
      <?php include("include_nav.php"); ?>
      <!--<div class="alert alert-info center" role="alert">!-->
-    <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
+    <h3><?= $ligne_utilisateur['prenom']; ?></h3>
     </div>
     <div class="container">
                     <!-- On rows -->
@@ -137,7 +122,7 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
     ?>
 
 
-    <footer>
+    <!-- <footer>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -145,7 +130,7 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
             </div>
       </div>
   </div>
-  </footer
+  </footer -->
 
 
   </div>

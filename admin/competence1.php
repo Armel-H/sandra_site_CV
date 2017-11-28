@@ -74,7 +74,7 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">compétences</h3>
+                        <h3><!-- class="panel-title">!-->compétences</h3>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -83,8 +83,8 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
                                     <tr>
                                         <th>Compétences</th>
                                         <th>Niveaux</th>
-                                        <th>Suppression</th>
                                         <th>Modification</th>
+                                        <th>Suppression</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -92,8 +92,8 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
                                         <?php while($ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
                                             <td><?php echo $ligne_competence['competence'] ;?></td>
                                             <td><?php echo $ligne_competence['c_niveau']; ?></td>
-                                            <td><a href="competence1.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">supprimer</a></td>
                                             <td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">modifier</a></td>
+                                            <td><a href="competence1.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">supprimer</a></td>
                                         </tr>
                                     <?php } ?>
 
@@ -108,7 +108,7 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Insérer une compétence</h3>
+                        <h3><!-- class="panel-title">!-->Insérer une compétence</h3>
                     </div>
                     <div class="panel-body">
                         <form action="competence1.php" method="post">
@@ -121,7 +121,7 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
                                 <input type="text" name="c_niveau" id="c_niveau" class="form-control">
                             </div>
                             <div class="form-group">
-                                <button type="submit" name="Insérez" class="btn btn-warning btn-block">Envoyez</button>
+                                <button type="submit" name="Insérez" class="btn btn-warning btn-block couleur-btn">Envoyez</button>
                             </div>
                         </form>
                     </div>
@@ -136,15 +136,15 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
             ?>
 
 
-            <footer>
+            <!-- <footer>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="panel-footer">Panel footer</div>
+                            <div class="panel-footer"></div>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> -->
 
 
         </div>

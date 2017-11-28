@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse"><!--Navbar boostrap-->
+<nav class="couleur-nav navbar navbar-inverse"><!--Navbar boostrap-->
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -47,7 +47,7 @@
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>!-->
-                        <li><a href="../index.html?quitter=oui">Deconnexion</a></li>
+                        <li><a href="authentification1.php?quitter=oui">Deconnexion</a></li>
                     </ul>
                 </li>
             </ul>

@@ -74,7 +74,7 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Loisirs</h3>
+                        <h3><!-- class="panel-title">!-->Loisirs</h3>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -82,16 +82,16 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
                                 <thead>
                                     <tr>
                                         <th>Loisirs</th>
-                                        <th>Suppression</th>
                                         <th>Modification</th>
+                                        <th>Suppression</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <?php while($ligne_loisir = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
                                             <td><?php echo $ligne_loisir['loisir'] ;?></td>
-                                            <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">supprimer</a></td>
                                             <td><a href="modif_loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">modifier</a></td>
+                                            <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">supprimer</a></td>
                                         </tr>
                                     <?php } ?>
 
@@ -106,7 +106,7 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Insérer un loisir</h3>
+                        <h3> <!--<class="panel-title">!-->Insérer un loisir</h3>
                     </div>
                     <div class="panel-body">
                         <form action="loisirs.php" method="post">
@@ -119,7 +119,7 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
                                 <input type="text" name="c_niveau" id="c_niveau" class="form-control">
                             </div>!-->
                             <div class="form-group">
-                                <button type="submit" value="Insérez" class="btn btn-warning btn-block">Envoyez</button>
+                                <button type="submit" value="Insérez" class="btn btn-warning btn-block couleur-btn">Envoyez</button>
                             </div>
                         </form>
                     </div>
@@ -134,7 +134,7 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
             ?>
 
 
-            <footer>
+            <!-- <footer>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
@@ -142,7 +142,7 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> -->
 
 
         </div>

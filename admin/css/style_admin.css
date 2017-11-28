@@ -9,14 +9,13 @@ html {
 }
 body {
 
- background-image: url(../img/image1.jpg);
- background-repeat: repeat-x;
+background-image: url(../img/image1.jpg);
+background-repeat: repeat-x;
   /* Margin bottom by footer height */
  margin-bottom: 60px;
 }
-h3{
-  background-color: : mistyrose;
-}
+
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -24,4 +23,36 @@ h3{
   /* Set the fixed height of the footer here */
   height: 60px;
   background-color: black;
+}
+.couleur-btn{
+    background:#630034 ;
+    border-color: black;
+
+}
+.couleur-btn:hover{
+    background: mistyrose;
+    transition: 3s;
+    border-color: black;
+
+}
+.couleur-nav{
+  background: #630034;
+}
+th{
+  color: #630034 ;
+}
+h1{
+  color: white;
+}
+h3{
+  color:#E8AFA0;
+}
+label{
+ color: #630034;
+}
+fieldset{
+  height: 40%;
+  width: 20%;
+  text-align: justify;
+  border-color: white;
 }

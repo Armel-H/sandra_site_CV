@@ -117,7 +117,7 @@ if(isset($_GET['id_formation'])){
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <p>Insertion d'une formation</p>
+                        <h3>Insertion d'une formation</h3>
                     </div>
                     <div class="panel-body">
                         <form action="formation.php" method="post">
@@ -138,7 +138,7 @@ if(isset($_GET['id_formation'])){
                                 <textarea class="form-control" id="f_description" name="f_description" placeholder="Décrire la formation"></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-info btn-block">Envoyer</button>
+                            <button type="submit" class="btn btn-info btn-block couleur-btn">Envoyer</button>
                         </form>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ if(isset($_GET['id_formation'])){
     ?>
 
 
-    <footer>
+    <!-- <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -163,7 +163,7 @@ if(isset($_GET['id_formation'])){
             </div>
         </div>
     </footer>
-
+ -->
 
 </div>
 </div>

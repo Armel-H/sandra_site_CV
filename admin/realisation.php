@@ -1,5 +1,6 @@
 <?php
 require('connexion.php');
+
 session_start();//à mettre dans toutes les pages de l'admin (même cette page)
   if(isset($_SESSION['connexion']) && $_SESSION['connexion']=='connecté'){//on établit que la variable de session est passée et contient bien le terme "connexion"
     $id_utilisateur=$_SESSION['id_utilisateur'];
@@ -15,26 +16,33 @@ $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = 
 $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 ?>
 <?php
-//comment
-// gestion des contenus de la BDD
-// Insertion des realisations
-if(isset($_POST['realisation'])) {// Si on a  posté une nouvelle compétence.
-    if(!empty($_POST['realisation'])){// si compétence n'est aps vide.
-        $realisation = addslashes($_POST['realisation']);
-        $pdoCV->exec("INSERT INTO t_realisations VALUES (NULL, '$realisation', '1')");// mettre $id_utilisateur quand on l'aura dans la variable de session.
-        header("location: realisation.php");// Pour revenir sur la page.
-        exit();
-    }// Ferme le if(!empty)
-}// ferme le if(isset)du formulaire
 
-// Suppréssion d'une realisation
-if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère la competence par son id_ ds l'URL
+if(isset($_POST['r_titre'])){ // Si on a posté une nouvelle compétence
+    if(!empty($_POST['r_titre']) && !empty($_POST['r_soustitre']) && !empty($_POST['r_dates']) && !empty($_POST['r_description'])){ // Si compétence n'est pas vide
+        $titre = addslashes($_POST['r_titre']);
+        $sousTitre = addslashes($_POST['r_soustitre']);
+        $dates = addslashes($_POST['r_dates']);
+        $description = addslashes($_POST['r_description']);
+        $pdoCV -> exec("INSERT INTO t_realisations (r_titre, r_soustitre, r_dates, r_description, utilisateur_id) VALUES ('$titre', '$sousTitre', '$dates', '$description', '1')"); // mettre $id_utilisateur quand on l'aura dans la variable de session
+        header("location:realisation.php");
+        exit();
+
+    }// ferme if n'est pas vide
+}
+
+// Supression d'une compétence
+if(isset($_GET['id_realisation'])){
+    // on récupère la compétence par son ID dans l'url
     $efface = $_GET['id_realisation'];
-    $resultat = "DELETE FROM t_realisations WHERE id_realisation ='$efface'";
-    $pdoCV->query($resultat);
+    $resultat = " DELETE FROM t_realisations WHERE id_realisation = '$efface' ";
+    $pdoCV ->query($resultat);
     header("location: realisation.php");
-}// Ferme le if(isset)
-// include("include_nav.php");
+} // ferme le if isset supression
+
+//$resultat = $pdoCV -> prepare("SELECT * FROM t_formations WHERE utilisateur_id = '1'");
+//$resultat -> execute();
+//$nbr_formation =  $resultat -> rowCount();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -68,32 +76,38 @@ if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère l
     //$ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
     ?>
     <div class="container">
-        <!-- On rows -->
+        <div class="row">
+        </div>
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default">
+                </div>
+                <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Réalisations</h3>
+                        <h3>Liste des réalisations</h3>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Réalisations</th>
-                                        <th>Suppression</th>
-                                        <th>Modification</th>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Titre</th>
+                                    <th>Soustitre</th>
+                                    <th>Dates</th>
+                                    <th>Description</th>
+                                    <th>Modifier</th>
+                                    <th>Supprimer</th>
+
+                                </tr>
+                                <tr>
+                                    <?php while($ligne_realisation = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
+                                        <td><?php echo $ligne_realisation['r_titre'] ;?></td>
+                                        <td><?php echo $ligne_realisation['r_soustitre'] ;?></td>
+                                        <td><?php echo $ligne_realisation['r_dates'] ;?></td>
+                                        <td><?php echo $ligne_realisation['r_description'] ;?></td>
+                                        <td><a href="modif_realisation.php?id_realisation=<?= $ligne_realisation['id_realisation']; ?>">Modifier</a></td>
+                                        <td><a href="realisation.php?id_realisation=<?= $ligne_realisation['id_realisation']; ?>">Supprimer</a></td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <?php while($ligne_realisation = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
-                                            <td><?php echo $ligne_realisation['realisation'] ;?></td>
-                                            <td><a href="realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>">supprimer</a></td>
-                                            <td><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>">modifier</a></td>
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
+                                <?php } ?>
                             </table>
                         </div>
                     </div>
@@ -102,47 +116,56 @@ if(isset($_GET['id_realisation'])) {// ferme le if(isset) // Ici on récupère l
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Insérer une realisation</h3>
+                        <h3>Insertion d'une réalisation</h3>
                     </div>
                     <div class="panel-body">
                         <form action="realisation.php" method="post">
                             <div class="form-group">
-                                <label for="realisation">réalisation</label>
-                                <input type="text" name="realisation" id="realisation" class="form-control"  >
+                                <label for="r_titre">Titre</label>
+                                <input type="text" class="form-control" id="r_titre" name="r_titre" placeholder="Titre">
                             </div>
-                            <!--<div class="form-group">
-                                <label for="c_niveau">Niveau</label>
-                                <input type="text" name="c_niveau" id="c_niveau" class="form-control">
-                            </div>!-->
                             <div class="form-group">
-                                <button type="submit" class="btn btn-warning btn-block">Envoyez svp</button>
+                                <label for="r_soustitre">Sous-titre</label>
+                                <input type="text" class="form-control" id="r_soustitre" name="r_soustitre" placeholder="Sous-titre">
                             </div>
+                            <div class="form-group">
+                                <label for="r_dates">Dates</label>
+                                <input type="text" class="form-control" id="r_dates" name="r_dates" placeholder="Insérez les dates">
+                            </div>
+                            <div class="form-group">
+                                <label for="r_description">Description</label>
+                                <textarea class="form-control" id="r_description" name="r_description" placeholder="Décrire la realisation"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-info btn-block couleur-btn">Envoyer</button>
                         </form>
                     </div>
                 </div>
             </div>
-
-
-            <hr>
-            <?php
-            $resultat = $pdoCV -> query("SELECT * FROM t_loisir");
-            $ligne_loisir = $resultat -> fetch(PDO::FETCH_ASSOC);
-            ?>
-
-
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel-footer"></div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-
-
         </div>
+
     </div>
+    <hr>
+    <?php
+    $resultat = $pdoCV -> query("SELECT * FROM t_realisations");
+    $ligne_realisation = $resultat -> fetch(PDO::FETCH_ASSOC);
+
+    ?>
+
+
+    <!-- <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+
+</div>
+</div>
 </div>
 </body>
 

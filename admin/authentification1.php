@@ -1,7 +1,19 @@
 <?php require('connexion.php');
 
 session_start();//à mettre dans toutes les pages de l'admin (même cette page)
-     $msg_auth_erreur='';// on initialise la variable en cas d'erreur.
+$msg_auth_erreur='';// on initialise la variable en cas d'erreur.
+
+// pour se déconnecter de l'admin (à mettre dans toutes les pages aussi)
+if(isset($_GET['quitter'])){// on récupère le terme quitter dans l'URL
+     $_SESSION['connexion']='';// On vide les variables de session
+     $_SESSION['id_utilisateur']='';
+     $_SESSION['prenom']='';
+     $_SESSION['nom']='';
+
+     unset($_SESSION['connexion']);//UNSET détruit les variables qui ont été définies.
+     session_destroy();
+     //header('location:../index.html');
+}// fermeture du if(isset de la déconnexion)
 
 if(isset($_POST['connexion'])){// on envoie le formulaire avec le nom du bouton, on clique dessus
      $email = addslashes($_POST['email']);
@@ -21,28 +33,37 @@ if(isset($_POST['connexion'])){// on envoie le formulaire avec le nom du bouton,
      }// ferme le if else
 
 }// ferme le if isset
- ?>
- <!DOCTYPE html>
- <html>
-     <head>
-         <meta charset="utf-8">
-         <link href="css/style_admin.css" rel="stylesheet">
+?>
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+     <link rel="stylesheet" href="css/style_admin.css"/>
 
-         <title>Authentification </title>
-     </head>
-     <body>
-         <h1>Admin : s'authentifier</h1>
-         <hr>
-         <form class="authentifier1.php" method="post">
-             <label for="email">Courriel</label>
-             <input type="email"name="email" placeholder="Votre courriel"required>
-             <br>
-             <label for="mdp">Mot de passe</label>
-             <input type="password" name="mdp" placeholder="Votre mot de passe"required>
-             <br>
-             <button name="connexion" type="submit">Connexion</button>
-             <br>
 
-         </form>
-     </body>
- </html>
+     <title>Authentification </title>
+</head>
+<body>
+     <h1>S'identifier</h1>
+     <hr>
+     <fieldset>
+          <form class="authentifier1.php" method="post">
+               <label for="email">Courriel</label>
+               <input type="email"name="email" placeholder="Votre courriel"required>
+               <br><br>
+               <label for="mdp">Mot de passe</label>
+               <input type="password" name="mdp" placeholder="Votre mot de passe"required>
+               <br><br>
+               <button name="connexion" type="submit">Connexion</button>
+               <br>
+     </fieldset>
+
+     </form>
+
+
+
+
+     <!-- </div> -->
+
+</body>
+</html>

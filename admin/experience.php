@@ -16,26 +16,33 @@ $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = 
 $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
 ?>
 <?php
-//comment
-// gestion des contenus de la BDD
-// Insertion des expériences
-if(isset($_POST['experience'])) {// Si on a  posté une nouvelle compétence.
-    if(!empty($_POST['experience'])){// si compétence n'est pas vide.
-        $experience = addslashes($_POST['experience']);
-        $pdoCV->exec("INSERT INTO t_experiences VALUES (NULL, '$experience', '1')");// mettre $id_utilisateur quand on l'aura dans la variable de session.
-        header("location: experience.php");// Pour revenir sur la page.
-        exit();
-    }// Ferme le if(!empty)
-}// ferme le if(isset)du formulaire
 
-// Suppréssion d'une compétence
-if(isset($_GET['id_experience'])) {// ferme le if(isset) // Ici on récupère la competence par son id_ ds l'URL
+if(isset($_POST['e_titre'])){ // Si on a posté une nouvelle compétence
+    if(!empty($_POST['e_titre']) && !empty($_POST['e_soustitre']) && !empty($_POST['e_dates']) && !empty($_POST['e_description'])){ // Si compétence n'est pas vide
+        $titre = addslashes($_POST['e_titre']);
+        $sousTitre = addslashes($_POST['e_soustitre']);
+        $dates = addslashes($_POST['e_dates']);
+        $description = addslashes($_POST['e_description']);
+        $pdoCV -> exec("INSERT INTO t_experiences (e_titre, e_soustitre, e_dates, e_description, utilisateur_id) VALUES ('$titre', '$sousTitre', '$dates', '$description', '1')"); // mettre $id_utilisateur quand on l'aura dans la variable de session
+        header("location: experience.php");
+        exit();
+
+    }// ferme if n'est pas vide
+}
+
+// Supression d'une experience
+if(isset($_GET['id_experience'])){
+    // on récupère l'experience par son ID dans l'url
     $efface = $_GET['id_experience'];
-    $resultat = "DELETE FROM t_experiences WHERE id_experience ='$efface'";
-    $pdoCV->query($resultat);
+    $resultat = " DELETE FROM t_experiences WHERE id_experience = '$efface' ";
+    $pdoCV ->query($resultat);
     header("location: experience.php");
-}// Ferme le if(isset)
-// include("include_nav.php");
+} // ferme le if isset supression
+
+//$resultat = $pdoCV -> prepare("SELECT * FROM t_formations WHERE utilisateur_id = '1'");
+//$resultat -> execute();
+//$nbr_formation =  $resultat -> rowCount();
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -61,87 +68,105 @@ if(isset($_GET['id_experience'])) {// ferme le if(isset) // Ici on récupère la
     <!-- nav en include -->
     <?php include("include_nav.php"); ?>
         <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
+    </div>
     <?php
     $resultat = $pdoCV -> prepare("SELECT * FROM t_experiences WHERE utilisateur_id = '1'");
     $resultat -> execute();
     $nbr_experience = $resultat->rowCount();
-    //$ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
+    //$ligne_experience = $resultat -> fetch(PDO::FETCH_ASSOC);
     ?>
     <div class="container">
-        <!-- On rows -->
+        <div class="row">
+        </div>
         <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default">
+                </div>
+                <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Expériences professionnelles</h3>
+                        <h3>Liste de mes experiences</h3>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Expériences</th>
-                                        <th>Modification</th>
-                                        <th>Suppression</th>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Titre</th>
+                                    <th>Soustitre</th>
+                                    <th>Dates</th>
+                                    <th>Description</th>
+                                    <th>Modifier</th>
+                                    <th>Supprimer</th>
+
+                                </tr>
+                                <tr>
+                                    <?php while($ligne_experience = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
+                                        <td><?php echo $ligne_experience['e_titre'] ;?></td>
+                                        <td><?php echo $ligne_experience['e_soustitre'] ;?></td>
+                                        <td><?php echo $ligne_experience['e_dates'] ;?></td>
+                                        <td><?php echo $ligne_experience['e_description'] ;?></td>
+                                        <td><a href="modif_experience.php?id_experience=<?= $ligne_experience['id_experience']; ?>">Modifier</a></td>
+                                        <td><a href="experience.php?id_experience=<?= $ligne_experience['id_experience']; ?>">Supprimer</a></td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <?php while($ligne_experience = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
-                                            <td><?php echo $ligne_experience['experience'] ;?></td>
-                                            <td><a href="experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>">supprimer</a></td>
-                                            <td><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>">modifier</a></td>
-                                        </tr>
-                                    <?php } ?>
-
-                                </tbody>
-
+                                <?php } ?>
                             </table>
                         </div>
-
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Insérer une expérience</h3>
+                        <h3>Insertion d'une experience</h3>
                     </div>
                     <div class="panel-body">
                         <form action="experience.php" method="post">
                             <div class="form-group">
-                                <label for="experience">experience</label>
-                                <input type="text" name="experience" id="experience" class="form-control"  >
+                                <label for="e_titre">Titre</label>
+                                <input type="text" class="form-control" id="e_titre" name="e_titre" placeholder="Titre">
                             </div>
                             <div class="form-group">
-                                <button type="submit" name="Insérez" class="btn btn-warning btn-block">Envoyez</button>
+                                <label for="e_soustitre">Sous-titre</label>
+                                <input type="text" class="form-control" id="e_soustitre" name="e_soustitre" placeholder="Sous-titre">
                             </div>
+                            <div class="form-group">
+                                <label for="f_dates">Dates</label>
+                                <input type="text" class="form-control" id="e_dates" name="e_dates" placeholder="Insérez les dates">
+                            </div>
+                            <div class="form-group">
+                                <label for="e_description">Description</label>
+                                <textarea class="form-control" id="e_description" name="e_description" placeholder="Décrire l'experience"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-info btn-block couleur-btn">Envoyer</button>
                         </form>
                     </div>
                 </div>
             </div>
-
-
-            <hr>
-            <?php
-            $resultat = $pdoCV -> query("SELECT * FROM t_experiences");
-            $ligne_experience = $resultat -> fetch(PDO::FETCH_ASSOC);
-            ?>
-
-
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel-footer"></div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-
-
         </div>
+
     </div>
+    <hr>
+    <?php
+    $resultat = $pdoCV -> query("SELECT * FROM t_experiences");
+    $ligne_experience = $resultat -> fetch(PDO::FETCH_ASSOC);
+
+    ?>
+
+
+    <!-- <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+
+</div>
+</div>
 </div>
 </body>
 
