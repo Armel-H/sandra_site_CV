@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>compétences</title>
+    <title>loisirs</title>
+    <!--affichage de l'heure!-->
     <SCRIPT LANGUAGE="JavaScript">
       function HeureCheckEJS()
       	{
@@ -39,10 +40,10 @@
       	setTimeout("HeureCheckEJS()", 1000)
       	}
       window.onload = HeureCheckEJS;
-      </SCRIPT>
+      </SCRIPT><!--fin affichage de l'heure!-->
 </head>
 <body>
-  <body>
+    <!--page du menu!-->
       <div class="meny">
 
       	<h2>Explorez</h2>
@@ -67,69 +68,33 @@
       <div class="meny-arrow"></div>
       <div class="contents">
           <h1>Sandra HÉRISSON</h1>
-          <h2>Mes compétences numériques</h2>
-      </div>
-      <script src="js/meny.js"></script>
-      <script>
-      	var meny = Meny.create({
-      	menuElement: document.querySelector( '.meny' ),
-      	contentsElement: document.querySelector( '.contents' ),
-      // [optional] alignement du menu (top/right/bottom/left)
-      	position: Meny.getQuery().p || 'left',
-      // [optional] hauteur du menu (pour la position top ou bottom)
-      	height: 200,
-      // [optional] largeur du menu (pour la position left ou right)
-      	width: 260,
-      // [optional] distance de d�clenchement du menu par rapport au menu
-      	threshold: 40,
-      // [optional] utilisation des mouvement de la souris pour l'ouverture ou la fermeture
-      	mouse: true,
-      // [optional] utilisation de l'approche
-      	touch: true
-      	});
+        </div>
+        <script src="js/meny.js"></script>
+        <script>
+        	var meny = Meny.create({
+        	menuElement: document.querySelector( '.meny' ),
+        	contentsElement: document.querySelector( '.contents' ),
+        // [optional] alignement du menu (top/right/bottom/left)
+        	position: Meny.getQuery().p || 'left',
+        // [optional] hauteur du menu (pour la position top ou bottom)
+        	height: 200,
+        // [optional] largeur du menu (pour la position left ou right)
+        	width: 260,
+        // [optional] distance de d�clenchement du menu par rapport au menu
+        	threshold: 40,
+        // [optional] utilisation des mouvement de la souris pour l'ouverture ou la fermeture
+        	mouse: true,
+        // [optional] utilisation de l'approche
+        	touch: true
+        	});
 
-      	if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
-      		var contents = document.querySelector( '.contents' );
-      		contents.style.padding = '0px';
-      		contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
-      	}
-
+        	if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+        		var contents = document.querySelector( '.contents' );
+        		contents.style.padding = '0px';
+        		contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+        	}
       </script>
-    <div class="wrap">
-  <div class="cube">
-    <div class="front">
-     HTML
-     <br>
-     65%
-    </div>
-    <div class="back">
-     CSS
-     <br>
-     65%
-    </div>
-    <div class="top">
-      JavaScript
-      35%
-    </div>
-    <div class="bottom">
-      Ajax
-      35%
-    </div>
-    <div class="left">
-      PHP
-      50%
-    </div>
-    <div class="right">
-     SQL
-     50%
-    </div>
-    <div class="right-side">
-     Bootstrap 50%
-     <br>
-     WordPress 50%
-    </div>
-  </div>
-</div>
+      <!--fin du menu!-->
 
 </body>
 </html>
