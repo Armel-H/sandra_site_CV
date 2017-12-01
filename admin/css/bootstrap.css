@@ -11,6 +11,7 @@ html {
 }
 body {
   margin: 0;
+
 }
 article,
 aside,
@@ -26,6 +27,7 @@ nav,
 section,
 summary {
   display: block;
+
 }
 audio,
 canvas,
@@ -5456,7 +5458,8 @@ button.list-group-item-danger.active:focus {
           box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 .panel-body {
-  padding: 15px;
+  padding:25px;
+  /*padding: 15px;*/
 }
 .panel-heading {
   padding: 10px 15px;

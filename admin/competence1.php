@@ -45,7 +45,6 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
-
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style_admin.css" rel="stylesheet">

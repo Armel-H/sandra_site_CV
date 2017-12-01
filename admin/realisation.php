@@ -51,6 +51,7 @@ if(isset($_GET['id_realisation'])){
 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -87,7 +88,8 @@ if(isset($_GET['id_realisation'])){
                         <h3>Liste des réalisations</h3>
                     </div>
                     <div class="panel-body">
-                        <div class="table-responsive">
+
+                        <div class="table-responsive"> 
                             <table class="table table-bordered table-striped">
                                 <tr>
                                     <th>Titre</th>
@@ -113,8 +115,8 @@ if(isset($_GET['id_realisation'])){
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
+             <div class="col-md-4">
+                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3>Insertion d'une réalisation</h3>
                     </div>
@@ -134,9 +136,11 @@ if(isset($_GET['id_realisation'])){
                             </div>
                             <div class="form-group">
                                 <label for="r_description">Description</label>
-                                <textarea class="form-control" id="r_description" name="r_description" placeholder="Décrire la realisation"></textarea>
+                                <textarea class="form-control" id="editor1" name="r_description" placeholder="Décrire la realisation"></textarea>
                             </div>
-
+                            <script >
+                              CKEDITOR.replace('editor1');
+                            </script>
                             <button type="submit" class="btn btn-info btn-block couleur-btn">Envoyer</button>
                         </form>
                     </div>
@@ -172,4 +176,5 @@ if(isset($_GET['id_realisation'])){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+
 </html>

@@ -8,11 +8,14 @@ html {
   min-height: 100%;*/
 }
 body {
+background: #8f7f9;
 
-background-image: url(../img/image1.jpg);
+/*background-image: url(../img/image1.jpg);
 background-repeat: repeat-x;
-  /* Margin bottom by footer height */
- margin-bottom: 60px;
+   Margin bottom by footer height*/
+ /*margin-bottom: 60px;*/
+ margin: auto;
+ margin-bottom: 10px;
 }
 
 
