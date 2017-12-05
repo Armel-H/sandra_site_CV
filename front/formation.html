@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>loisirs</title>
+    <title>Formations</title>
     <!--affichage de l'heure!-->
     <SCRIPT LANGUAGE="JavaScript">
     function HeureCheckEJS()
@@ -68,61 +68,33 @@
     <div class="meny-arrow"></div>
     <div class="contents">
         <h1>Sandra HÉRISSON</h1>
-        <h2>Mes loisirs</h2>
+        <h2>Mes formations</h2>
     </div>
     <script src="js/meny.js"></script>
-    <script>
-    var meny = Meny.create({
-        menuElement: document.querySelector( '.meny' ),
-        contentsElement: document.querySelector( '.contents' ),
-        // [optional] alignement du menu (top/right/bottom/left)
-        position: Meny.getQuery().p || 'left',
-        // [optional] hauteur du menu (pour la position top ou bottom)
-        height: 200,
-        // [optional] largeur du menu (pour la position left ou right)
-        width: 260,
-        // [optional] distance de d�clenchement du menu par rapport au menu
-        threshold: 40,
-        // [optional] utilisation des mouvement de la souris pour l'ouverture ou la fermeture
-        mouse: true,
-        // [optional] utilisation de l'approche
-        touch: true
-    });
-
-    if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
-        var contents = document.querySelector( '.contents' );
-        contents.style.padding = '0px';
-        contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
-    }
-    </script>
-    <!--fin du menu!-->
-    <div class="a-long-time-ago">
-        A long time ago, in a galaxy far,<br> far away..
-    </div>
-
-    <div class="crawl">
-        <div>
-            <p>
-                Mes loisirs sont divers et variés.
-
-                J'aime le cinéma dans son ensemble avec une nette préférence pour la science-fiction et les films fantastiques.
-            </p>
-            <p>
-                J'aime lire (les classiques, les romans policiers, les romans fantastiques et de science-fiction, la BD et les mangas).
-            </p>
-            <p>
-                J'aime le dessin et dessiner.
-            </p>
-            <p>
-                J'aime les voyages.
-                je suis allée en Allemagne, en Angleterre, en Belgique, en Espagne, en Israël, en Italie et au Portugal.
-            </p>
-            <p>
-                J'aime la musique.
-                J'ai une culture musicale très diversifier.
-            </p>
-        </div>
-    </div>
-
+      <script>
+      var meny = Meny.create({
+          menuElement: document.querySelector( '.meny' ),
+          contentsElement: document.querySelector( '.contents' ),
+          // [optional] alignement du menu (top/right/bottom/left)
+          position: Meny.getQuery().p || 'left',
+          // [optional] hauteur du menu (pour la position top ou bottom)
+          height: 200,
+          // [optional] largeur du menu (pour la position left ou right)
+          width: 260,
+          // [optional] distance de d�clenchement du menu par rapport au menu
+          threshold: 40,
+          // [optional] utilisation des mouvement de la souris pour l'ouverture ou la fermeture
+          mouse: true,
+          // [optional] utilisation de l'approche
+          touch: true
+      });
+  
+      if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+          var contents = document.querySelector( '.contents' );
+          contents.style.padding = '0px';
+          contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+      }
+      </script>
+      
 </body>
 </html>
