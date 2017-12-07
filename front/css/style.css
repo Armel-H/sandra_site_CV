@@ -36,12 +36,12 @@ a:hover {
 
 h1
 {
-	font-size: 40px;
+	font-size: /*40px*/3em;
 	color: /*#d7cde8fa;*//*#00FFFF*//*#fffcad*/#f4eebc;
 }
 h2{
 	font-family: 'Audiowide', cursive;
-	font-size: 34px;
+	font-size: /*34px*/2em;
 	color: /*#d7cde8fa*/purple;
 }
 h3{
@@ -52,8 +52,8 @@ h3{
 	position:absolute;
 	left:50%;
 	top: 50%;
-	width: 200px;
-	height: 200px;
+	/*width: 200px;
+	height: 200px;*/
 	margin-left: -100px; /* Cette valeur doit être la moitié négative de la valeur du width */
 	margin-top: -100px;
 }
