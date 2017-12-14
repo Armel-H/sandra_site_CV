@@ -67,7 +67,7 @@ if(isset($_GET['id_realisation'])){
 </head>
 <body>
     <!-- nav en include -->
-    <?php include("include_nav.php"); ?>
+    <?php include("inc/include_nav.php"); ?>
         <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
     </div>
     <?php

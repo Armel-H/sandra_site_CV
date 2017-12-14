@@ -34,7 +34,7 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
   </head>
   <body>
      <!-- nav en include -->
-     <?php include("include_nav.php"); ?>
+     <?php include("inc/include_nav.php"); ?>
      <!--<div class="alert alert-info center" role="alert">!-->
     <h3><?= $ligne_utilisateur['prenom']; ?></h3>
     </div>

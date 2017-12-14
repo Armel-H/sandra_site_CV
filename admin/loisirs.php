@@ -59,7 +59,7 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
 </head>
 <body>
     <!-- nav en include -->
-    <?php include("include_nav.php"); ?>
+    <?php include("inc/include_nav.php"); ?>
         <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
     </div>
     <?php

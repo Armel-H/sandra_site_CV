@@ -1,3 +1,42 @@
+<?php
+//Formulaire/index.php
+// on récupère la classe Contact
+require('Contact.class.php');
+
+// on vérifie que le formulaire a été posté
+if (!empty($_POST)) {
+  // on éclate le $_POST en tableau qui permet d'accéder directement aux champs par des variables
+  extract($_POST);
+  //var_dump($_POST);
+  // on effectue une validation des données du formulaire et on vérifie la validité de l'email
+  $valid = (empty($c_nom) || empty($c_email) || !filter_var($c_email, FILTER_VALIDATE_EMAIL) || empty($c_sujet) || empty($c_message)) ? false : true; // écriture ternaire pour if / else
+  $erreurnom = (empty($c_nom)) ? 'Indiquez votre nom' : null;
+  $erreuremail = (empty($c_email) || !filter_var($c_email, FILTER_VALIDATE_EMAIL)) ? 'Entrez un email valide' : null;
+  $erreursujet = (empty($c_sujet)) ? 'Indiquez un sujet' : null;
+  $erreurmessage = (empty($c_message)) ? 'Parlez donc !!' : null;
+  // si tous les champs sont correctement renseignés
+  if ($valid) {
+    // on crée un nouvel objet (ou une instance) de la class Contact.class.php
+    $contact = new Contact();
+    // on utilise la méthode insertContact pour insérer en BDD
+    $contact->insertContact($c_nom, $c_email, $c_sujet, $c_message);
+  }
+}
+// on utilise la méthode sendMail de la classe Contact.class.php
+//$contact->sendEmail($c_sujet, $c_email, $c_message);
+
+// on efface les valeurs du formulaires
+unset($c_nom);
+unset($c_email);
+unset($c_sujet);
+unset($c_message);
+unset($c_contact);
+
+// on créé une variable de succès
+$success = 'Message envoyé !';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +45,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style1.css">
@@ -52,8 +91,7 @@
     <ul>
       <li><a href="page_accueil1.html">Accueil</a></li>
       <li><a href="profil1.html">Profil</a></li>
-      <li><a href="formation.html">Formations</a></li>
-      <li><a href="../../experience.php">Experiences</a></li>
+      <li><a href="formation_experience.html">Formations</a></li>
       <li><a href="competence1.html">Compétences</a></li>
       <li><a href="../../realisation.php">Réalisations</a></li>
       <li><a href="loisir.html">Loisirs</a></li>
@@ -69,25 +107,47 @@
   </div>
   <div class="meny-arrow"></div>
   <div class="contents">
-    <div class="bg10">
-  		<form action="#" method="post">
-  			<input type="text" class="cont" id="name" name="firstname" placeholder="Name" required><span class="fa fa-user user"></span> <br/>
-
-  			<input type="text" id="email" class="cont" name="email" placeholder="Email" required>
-        <span class="fa fa-envelope-o email_icon"></span>
-        <br/>
-
-  			<input type="text" id="subjecting" class="cont" name="subject" placeholder="Subject" required> <span class="fa fa fa-pencil subject"></span> <br/>
-
-  			<textarea rows="10" cols="40" id="boxing"  class="cont" placeholder="Message"></textarea> <span class="fa fa-comment-o comment"></span><br/>
-
-  			<input type="submit" value="Send a message" id="submit_button">
-  		</form>
-  	</div>
-
-  </div>
     <h1>Sandra HÉRISSON</h1>
     <h2>Contact</h2>
+    <!-- BONUS EMAIL -->
+
+    <?php if (isset($success)): ?>
+      <div class="alert alert-success1" role="alert"><?= $success; ?></div>
+    <?php endif ?>
+
+    <!-- FIN BONUS EMAIL -->
+    <form action="contact1.php" method="POST">
+      <div id="form-main">
+        <div id="form-div">
+          <div class="form" id="form1">
+            <!-- <form class="form" id="form1">  -->
+            <label for="nom">Nom :</label>
+            <span class="error"><?php if (isset($erreurnom)) echo $erreurnom; ?></span>
+            <input class="form-control" type="text" name="c_nom" value="<?php if(isset($c_nom)) echo $c_nom; ?>">
+          </div>
+          <div class="form-group">
+            <label for="email">Email :</label>
+            <span class="error"><?php if (isset($erreuremail)) echo $erreuremail; ?></span>
+            <input id="email" class="form-control" type="text" name="c_email" value="<?php if (isset($c_email)) echo $c_email; ?>">
+          </div>
+          <div class="form-group">
+            <label for="sujet">Sujet :</label>
+            <span class="error"><?php if (isset($erreursujet)) echo $erreursujet; ?></span>
+            <input class="form-control" type="text" name="c_sujet" value="<?php if (isset($c_sujet)) echo $c_sujet; ?>">
+          </div>
+          <div class="form-group">
+            <label for="message">Message :</label>
+            <span class="error"><?php if (isset($erreurmessage)) echo $erreurmessage; ?></span>
+            <textarea class="form-control" name="c_message" cols="30" rows="10"><?php if (isset($c_message)) echo $c_message; ?></textarea>
+          </div>
+          <div class="submit">
+            <input type="submit" value="ENVOYER" id="button-blue"/>
+            <div class="ease"></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
   <script src="js/meny.js"></script>
   <script>
   var meny = Meny.create({

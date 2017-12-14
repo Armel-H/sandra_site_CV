@@ -40,7 +40,7 @@ if(isset($_POST['connexion'])){// on envoie le formulaire avec le nom du bouton,
      <meta charset="utf-8">
      <link rel="stylesheet" href="css/style_admin.css"/>
 
-
+     <?php include 'inc/include_nav.php'; ?>
      <title>Authentification </title>
 </head>
 <body>
