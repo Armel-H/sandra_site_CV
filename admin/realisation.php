@@ -89,7 +89,7 @@ if(isset($_GET['id_realisation'])){
                     </div>
                     <div class="panel-body">
 
-                        <div class="table-responsive"> 
+                        <div class="table-responsive">
                             <table class="table table-bordered table-striped">
                                 <tr>
                                     <th>Titre</th>

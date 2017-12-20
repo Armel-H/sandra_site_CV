@@ -6,13 +6,13 @@ html,
 body {
 	height: 100%;
 	overflow: hidden;
-}
-body{
+}*/
+/* body{
 	font-family: 'Fredericka the Great', cursive;
-	font-size: 16px;
-	color: /*#222*//*#FFEB3B;
+	font-size: 16px; */
+	/*color: /*#222*//*#FFEB3B;
 	/*background-color: url(image1.png) repeat-x #000000;*/
-/*} */
+/*}
 
 
 
@@ -653,7 +653,7 @@ button{
 body {
   padding: 0px;
   margin: 0px;
-  background-color: white;
+  /* background-color: white; */
   text-align: center;
   position: absolute;
   top: 0px;
@@ -705,10 +705,14 @@ body {
   opacity: .1;
   filter: blur(1px);
 }
+h4{
+	color: black;
+	font-family: 'Risque', cursive;
+}
 
-.page p,
-/*.page h2*/ {
-  font-family: Algerian;
+.page p {
+  color: black;
+  font-family: 'Risque', cursive;
   font-weight: bolder;
   position: absolute;
   display: block;
@@ -719,9 +723,6 @@ body {
   text-shadow: none;
   z-index: 100000;
   vertical-align:central;
-}
-.page p{
-  font-size: 15px;
 }
 
 .bg {
@@ -735,13 +736,14 @@ body {
   width: 100%;
   height: 100%;
   filter: blur(1px) brightness(110%) contrast(150%);
-  opacity: .7;
+  opacity: .4;
+  /* opacity: .7; */
   vertical-align: central;
   text-align: center;
 }
 
 .bg:before {
-  font-family: Arial;
+  font-family: 'Risque', cursive;
   font-size: 30px;
   position: absolute;
   color: black;
@@ -759,7 +761,7 @@ body {
 }
 
 .bg:after {
-  font-family: Arial;
+  font-family: 'Risque', cursive;
   font-size: 8px;
   position: absolute;
   text-align: left;
@@ -807,8 +809,8 @@ body {
   z-index: 2;
   transform: rotateY(0deg);
 }
-ul li{
+/* ul li{
 	color: white;
 	border:20%;
 
-}
+} */

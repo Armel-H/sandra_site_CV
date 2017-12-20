@@ -8,14 +8,16 @@ html {
   min-height: 100%;*/
 }
 body {
-background: #8f7f9;
-
-/*background-image: url(../img/image1.jpg);
-background-repeat: repeat-x;
-   Margin bottom by footer height*/
+ background-image: url(../img/ring.jpg) ;
+ background-size: cover;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+/* background-repeat: repeat-x; */
+   /*Margin bottom by footer height*/
  /*margin-bottom: 60px;*/
- margin: auto;
- margin-bottom: 10px;
+ /* margin: auto;
+ margin-bottom: 10px; */
 }
 
 
@@ -28,8 +30,9 @@ background-repeat: repeat-x;
   background-color: black;
 }
 .couleur-btn{
-    background:#630034 ;
-    border-color: black;
+    background:black ;
+    /* background:#630034 ; */
+    border-color: mistyrose;
 
 }
 .couleur-btn:hover{
@@ -39,23 +42,28 @@ background-repeat: repeat-x;
 
 }
 .couleur-nav{
-  background: #630034;
+  background: black;
+  /* background: #630034; */
 }
 th{
-  color: #630034 ;
+  color: black ;
+  /* color: #630034 ; */
 }
 h1{
   color: white;
 }
 h3{
-  color:#E8AFA0;
+  color:black;
+  /* color:#E8AFA0; */
 }
 label{
- color: #630034;
+ color: black;
+ /* color: #630034; */
 }
 fieldset{
   height: 40%;
   width: 20%;
   text-align: justify;
-  border-color: white;
+  border-color: black;
+  /* border-color: white; */
 }
