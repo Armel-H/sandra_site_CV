@@ -50,34 +50,39 @@
         </SCRIPT>
         <!--fin affichage de l'heure!-->
     </head>
-    <body>
-        <!--menu !-->
-        <div class="meny">
-            <h2>Explorez</h2>
 
-            <ul>
-                <li><a href="index.php">Accueil</a></li>
-                <li><a href="front/profil.php">Profil</a></li>
-                <li><a href="front/formation_experience.php">Formations</a></li>
-                <li><a href="front/competences.php">Compétences</a></li>
-                <li><a href="front/realisations.php">Réalisations</a></li>
-                <li><a href="front/loisirs.php">Loisirs</a></li>
-                <li><a href="front/contact.php">Contact</a></li>
-                <br/><br/>
-                <div class="heure">
-                    <br /><p class="tt" ></p><br /><br />
-                    <div id="ejs_heure">Initialisation</div>
+    <!--menu !-->
+    <div class="meny">
+        <h2>Explorez</h2>
+
+        <ul>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="front/profil.php">Profil</a></li>
+            <li><a href="front/formation_experience.php">Formations</a></li>
+            <li><a href="front/competences.php">Compétences</a></li>
+            <li><a href="front/realisations.php">Réalisations</a></li>
+            <li><a href="front/loisirs.php">Loisirs</a></li>
+            <li><a href="front/contact.php">Contact</a></li>
+            <br/><br/>
+            <div class="heure">
+                <br /><p class="tt" ></p><br /><br />
+                <div id="ejs_heure">Initialisation</div>
+            </div>
+        </ul>
+    </div>
+    <div class="meny-arrow"></div>
+    <div class="contents">
+        <!--<h1>Sandra HÉRISSON</h1>-->
+        <h1><?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></h1>
+        <br><br>
+        <h1><marquee direction="left">Intégratrice, développeuse web junior </marquee><h1>
+
+                <h2><marquee direction="right">Voici mon porte-folio </marquee></h2>
+                <br><br>
+                <h2><marquee direction="left">EN RECHERCHE DE STAGE </marquee></h2>
                 </div>
-            </ul>
-        </div>
-        <div class="meny-arrow"></div>
-        <div class="contents">
-            <!--<h1>Sandra HÉRISSON</h1>-->
-            <h1><?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></h1>
-            <h3>C.V.</h3>
-        </div>
-        <script src="front/js/meny.js"></script>
-        <script>
+                <script src="front/js/meny.js"></script>
+                <script>
             var meny = Meny.create({
                 menuElement: document.querySelector('.meny'),
                 contentsElement: document.querySelector('.contents'),
@@ -101,7 +106,7 @@
                 contents.style.padding = '0px';
                 contents.innerHTML = '<div class="cover"></div><iframe src="' + Meny.getQuery().u + '" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
             }
-        </script>
+                </script>
 
-    </body>
-</html>
+
+                </html>
