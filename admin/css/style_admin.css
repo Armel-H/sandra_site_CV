@@ -63,7 +63,7 @@ label{
 fieldset{
   height: 40%;
   width: 20%;
-  text-align: justify;
+  text-align: left;
   border-color: black;
   /* border-color: white; */
 }

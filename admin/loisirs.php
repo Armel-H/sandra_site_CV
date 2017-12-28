@@ -9,7 +9,7 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
     //echo $_SESSION['connexion'];
     //var_dump('$_SESSION');
   }else{//l'utilisateur n'est pas connecté
-    header('location : authentification1.php');
+    header('location : authentification.php');
   }// ferme le else du if isset
 
 $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
@@ -44,7 +44,7 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
 
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
-
+<title>Admin : <?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style_admin.css" rel="stylesheet">

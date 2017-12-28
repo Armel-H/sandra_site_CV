@@ -9,7 +9,7 @@ if(isset($_SESSION['connexion']) && $_SESSION['connexion']=='connecté'){//on é
   //echo $_SESSION['connexion'];
   //var_dump('$_SESSION');
 }else{//l'utilisateur n'est pas connecté
-  header('location : authentification1.php');
+  header('location : authentification.php');
 }// ferme le else du if isset
 
 $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
