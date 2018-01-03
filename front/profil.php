@@ -11,9 +11,9 @@
         <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <title>profil1</title>
+        <title>Objectifs Pro.</title>
         <?php
-        $resultat = $bdd->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
+        $resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
         $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
         ?>
         <!--script affichage de l'heure!-->

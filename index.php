@@ -57,12 +57,12 @@
 
         <ul>
             <li><a href="index.php">Accueil</a></li>
-            <li><a href="front/profil.php">Profil</a></li>
-            <li><a href="front/formation_experience.php">Formations</a></li>
+            <li><a href="front/profil.php">Objectifs Pro.</a></li>
+            <li><a href="front/formation_experiences.php">Expériences</a></li>
             <li><a href="front/competences.php">Compétences</a></li>
             <li><a href="front/realisations.php">Réalisations</a></li>
             <li><a href="front/loisirs.php">Loisirs</a></li>
-            <li><a href="front/contact.php">Contact</a></li>
+            <li><a href="front/contact.php">Contactez-moi</a></li>
             <br/><br/>
             <div class="heure">
                 <br /><p class="tt" ></p><br /><br />
@@ -77,7 +77,7 @@
         <br><br>
         <h1><marquee direction="left">Intégratrice, développeuse web junior </marquee><h1>
 
-                <h2><marquee direction="right">Voici mon porte-folio </marquee></h2>
+                <h2><marquee direction="right">Voici mon port-folio </marquee></h2>
                 <br><br>
                 <h2><marquee direction="left">EN RECHERCHE DE STAGE </marquee></h2>
                 </div>

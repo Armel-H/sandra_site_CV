@@ -13,7 +13,7 @@
         <title>Formations & Compétences</title>
         <!--script pour afficher l'heure en js!-->
         <?php
-        $resultat = $bdd->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
+        $resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
         $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
         ?>
         <SCRIPT LANGUAGE="JavaScript">
@@ -55,7 +55,7 @@
         <div class="contents">
             <!--            <h1>Sandra HÉRISSON</h1>-->
             <h1><?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></h1>
-            <h2>Formations & Expériences</h2>
+            <h2>Expériences et Formations</h2>
             <style id="look">
             </style>
             <button id="turn-right">Next Page</button>
@@ -67,7 +67,7 @@
                     <div class="page frnt">
                         <div class="bg">
                         </div>
-                        <p><h4>Mes formations et mes expériences
+                        <p><h4>
                         </h4></p>
                     </div>
                     <div class="page bck">

@@ -15,7 +15,7 @@
         <title>Realisations</title>
         <!--script pour afficher l'heure en js!-->
         <?php
-        $resultat = $bdd->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
+        $resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
         $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
         ?>
         <SCRIPT LANGUAGE="JavaScript">
@@ -62,7 +62,7 @@
             <!--            <h1>Sandra HÉRISSON</h1>-->
             <h1><?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></h1>
             <br><br><br>
-            <h2>Mes formations</h2>
+            <h2>Mes réalisations</h2>
             <br><br><br>
             <div class="container">
                 <div class="row">

@@ -12,7 +12,7 @@
         <title>compétences</title>
         <!--script pour afficher l'heure en js!-->
         <?php
-        $resultat = $bdd->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
+        $resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
         $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
         ?>
         <SCRIPT LANGUAGE="JavaScript">
@@ -54,7 +54,7 @@
         <div class="contents">
             <!--            <h1>Sandra HÉRISSON</h1>-->
             <h1><?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></h1>
-            <h2>Mes compétences numériques</h2>
+            <h2>Mes compétences Web</h2>
             <p>
                 Html/ CSS
                 -> JavaScript/jquery

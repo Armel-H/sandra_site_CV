@@ -12,7 +12,7 @@
         <title>loisirs</title>
         <!--affichage de l'heure!-->
         <?php
-        $resultat = $bdd->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
+        $resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
         $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
         ?>
         <SCRIPT LANGUAGE="JavaScript">
@@ -54,7 +54,7 @@
         <div class="contents">
             <!--            <h1>Sandra HÉRISSON</h1>-->
             <h1><?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></h1>
-            <h2>Mes loisirs</h2>
+            <h2>J'aime . . . . . . .</h2>
         </div>
         <script src="js/meny.js"></script>
         <script>

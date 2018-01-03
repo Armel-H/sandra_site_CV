@@ -2,12 +2,12 @@
     <h2>Explorez</h2>
     <ul>
         <li><a href="../index.php">Accueil</a></li>
-        <li><a href="profil.php">Profil</a></li>
-        <li><a href="formation_experiences.php">Formations</a></li>
-        <li><a href="competences.php">Compétences</a></li>
+        <li><a href="profil.php">Objectifs Pro.</a></li>
+        <li><a href="formation_experiences.php">Expériences</a></li>
+        <li><a href="competences.php">Compétences Web</a></li>
         <li><a href="realisations.php">Réalisations</a></li>
         <li><a href="loisirs.php">Loisirs</a></li>
-        <li><a href="contact.php">Contact</a></li>
+        <li><a href="contact.php">Contactez-moi</a></li>
         <div class="heure">
             <br /><p class="tt" ></p><br /><br />
             <div id="ejs_heure">Initialisation</div>
