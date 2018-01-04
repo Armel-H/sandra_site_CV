@@ -36,7 +36,7 @@ h2{
     font-size: /*34px*/2em;
     color: #fb7cfb;
 }
-h3 }
+h3{
 
 font-family: 'Fredericka the Great', cursive;
 font-size: /*150px;*/7em;
@@ -161,102 +161,176 @@ h5{
 }
 
 /*------------------css carte de visite-------------*/
-ul {
-    margin: 0;
-    padding: 0;
+  /* body{
+  overflow: hidden;
+  margin: 0;
+  background-color: #bfebff;
+} */
+/* main{
+  width: 100vw;
+  height: 100vh;
+  display: table-cell;
+  padding-top: 60px;
+} */
+.appareil{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+37,f1f1f1+99,f6f6f6+100,e1e1e1+100 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 37%, #d4d3d3 99%, #d0d0d0 100%, #989898 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 37%,#d4d3d3 99%,#d0d0d0 100%,#989898 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, /*#ffffff*/#7f7ed4 37%,#d4d3d3 99%,#d0d0d0 100%,#989898 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */
+  width: 400px;
+  height: 280px;
+  margin: auto;
+  border-radius: 40px;
+  position: relative;
+    /* box-shadow: 9px 9px 0px ; */
+    /* box-shadow: 6px 6px 0px ; */
 }
-
-.box li {
-    display: inline-block;
-    margin: 6px;
-    /*list-style: none;*/
+.objectif{
+  background-color: #4A4A4C;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  left: calc((400px / 2 ) - (120px / 2));
+  top: calc((280px / 2 ) - (120px / 2));
+  border: 4px solid #26262D;
 }
-
-.box li a{
-    color: White;
-    text-decoration: none;
-    font-size: 40px;
+.lentille{
+  background-color: #312F34;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  left: calc((400px / 2 ) - (80px / 2));
+  top: calc((280px / 2 ) - (80px / 2));
+  border: 4px solid #29292D;
 }
-
-i:hover{
-    color: /*Teal*/black;
-    font-size: 40px;
-    animation: turn 500ms ease-in-out;
+.souslentille{
+  background-color: #312F32;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: calc((400px / 2 ) - (30px / 2));
+  top: calc((280px / 2 ) - (30px / 2));
+  border: 4px solid #3C3A3F;
 }
-
-.box i {
-    transform-style: preserve-3d;
-    transition: all 250ms ease-in-out;
+.pointe{
+  background-color: black;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  position: absolute;
+  left: calc((400px / 2 ) - (6px / 2));
+  top: calc((280px / 2 ) - (6px / 2));
 }
-
-.box {
-    width: /*770px*/500px;
-    height: auto;
-    /*background: linear-gradient(to bottom , Black ,rgba(47,79,79, 0.7));*/
-    /* padding: 80px; */
-    /* padding: 110px; */
-    text-align:
-        center;
-    margin: auto;
-    margin-top: 10%;
-    margin-bottom: 2%;
-    color: White;
-    font-family: 'Fredericka the Great', cursive;
-    border-radius: 70px;
-    /*box-shadow: 0px 0px 15px 4px rgba(195, 193, 142, 0.1);*/
-    box-shadow: 45px 8px 0px 15px rgba(255, 255, 255, 0.2);
+.bandes{
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  right: 0;
+  height: 18px;
+  top: calc(50% - (18px / 2));
 }
-
-i:active {
-    transform: translateY(4px);
-
+.bandes > div{
+  height: calc(18px / 6);
+  width: 100%;
+  display: block;
 }
-
-@keyframes turn {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.bandes > div:nth-child(1){ background-color: #B25577; }
+.bandes > div:nth-child(2){ background-color: #E0823D; }
+.bandes > div:nth-child(3){ background-color: #E1B148; }
+.bandes > div:nth-child(4){ background-color: #BABD29; }
+.bandes > div:nth-child(5){ background-color: #4D9540; }
+.bandes > div:nth-child(6){ background-color: #0B6094; }
+.flash{
+  border: 4px solid #9E9388;
+  background-color: #978956;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 80px;
+  top: 40px;
+  z-index: 19;
+  animation: flash 7s 1s linear infinite;
 }
-
-.box_profile {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    border: solid /*2px*/5px /*#c3c18e*/;
+.fente{
+  background-color: #a7a7a7;
+  border: 1px solid #bdbdbd;
+  width: 80%;
+  bottom: 20px;
+  position: absolute;
+  left: 10%;
+  height: 3px;
+  border-radius: 50%;
 }
-.box h1 {
-    font-weight: 250;
-    font-size: 40px;
-    letter-spacing: 4px;
-    margin: 0;
-    margin-top: 2%;
-    padding: 0;
-    border-bottom: 1px solid White;
+@keyframes flash {
+  0%{
+    background-color: white;
+    border-color: white;
+    transform: scale(1);
+  }
+  5% {
+    background-color: white;
+    border-color: white;
+    transform: scale(100);
+  }
+  7% {
+    border: 4px solid #9E9388;
+    background-color: #978956;
+    transform: scale(1);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  100% {
+    border: 4px solid #9E9388;
+    background-color: #978956;
+    transform: scale(1);
+  }
 }
-
-.box p {
-    font-weight: 120px;
-    font-size: 25px;
-    letter-spacing: 2px;
-    color: #f1c5f1;
-    text-transform: uppercase;
-    /*margin: 0;
-    padding: 0;
-    /*text-align: center;*/
-    font-size:25px;
-    line-height: 150%;
+@keyframes imprime {
+  0%{
+    height: 0px;
+    transform: translateY(-20px);
+  }
+  20% {
+    height: 270px;
+    transform: translateY(-20px);
+  }
+  40% {
+    height: 270px;
+    transform: translateY(-20px);
+  }
+  100% {
+    height: 270px;
+    transform: translateY(100vh) rotate(45deg);
+  }
 }
-
-.box a {
-    text-decoration: none;
-    color: White;
+.photo{
+  background-color: #eee /*#3c3542*/;
+    /* opacity: 0.5; */
+  /* filter:alpha(opacity=50);
+  -moz-opacity:0.5; */
+  width: 315px;
+  height: 0;
+  margin: auto;
+  position: absolute;
+  left: calc(50vw - 315px / 2);
+  transform: translateY(-20px);
+  /* animation: imprime 5s 1.5s linear infinite; */
+   animation: imprime 7s 3s /*linear infinite; */linear infinite;
 }
-p:hover {
-    text-decoration: underline;
-    color: white;
+.cache{
+  height: 80%;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5%;
+  background-image: url('../image/txt2.png');
 }
 /*-----------------------------cube-------------------------------------*/
 .wrap {

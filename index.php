@@ -13,7 +13,7 @@
         <title>Accueil</title>
         <!-- Affichage de l'heure!-->
         <?php
-        $resultat = $bdd->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
+        $resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
         $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
         ?>
 

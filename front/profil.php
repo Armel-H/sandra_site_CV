@@ -5,13 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="css/style1.css">
-        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
-        <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+        <!-- <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'> -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <title>Objectifs Pro.</title>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+        <link href="https://fonts.googleapis.com/css?family=|Gentium+Book+BasicSource+Serif+Pro" rel="stylesheet">
+         <link href="css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="css/style1.css">
+        <title>Objectifs pro.</title>
         <?php
         $resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
         $ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
@@ -57,11 +59,31 @@
                 <!--                <h1>Sandra HÉRISSON</h1>-->
                 <h1><?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></h1>
                 <br>
-                <p>intégrateur développeur Web</p>
-                <p>Junior</p>
-                <p>En recherche de stage</p>
+                <h2>Mes objectifs pro.</h2>
                 <br>
                 <br>
+                <body id="top">
+               <main>
+                 <div class="appareil">
+                   <div class="bandes">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                   </div>
+                   <div class="objectif"></div>
+                   <div class="lentille"></div>
+                   <div class="souslentille"></div>
+                   <div class="pointe"></div>
+                   <div class="flash"></div>
+                   <div class="fente"></div>
+                 </div>
+                 <div class="photo"><div class="cache"></div></div>
+                 <!-- <div class="photo"><div class="cache"></div></div> -->
+               </main>
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
             </div>
         </div>
@@ -91,6 +113,7 @@
             }
         </script>
 
-
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/index2.js"></script>
     </body>
 </html>
