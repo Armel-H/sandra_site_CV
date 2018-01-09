@@ -161,176 +161,251 @@ h5{
 }
 
 /*------------------appareil photo-------------*/
-/*body{
-    overflow: hidden;
-    margin: 0;
-    /*background-color: #bfebff;
-}*/
-main{
-    width: /*100vw*/105vw;
-    height: /*100vh*/105vh;
-    wdisplay: table-cell;
-    padding-top: 60px;
-}
-.appareil{
-    /*Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+37,f1f1f1+99,f6f6f6+100,e1e1e1+100
-        background: #ffffff; /* Old browsers */
-    background: -moz-linear-gradient(top, #ffffff 37%, #d4d3d3 99%, #d0d0d0 100%, #989898 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, #ffffff 37%,#d4d3d3 99%,#d0d0d0 100%,#989898 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, /*#ffffff*/#7f7ed4 37%,#d4d3d3 99%,#d0d0d0 100%,#989898 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e1e1',GradientType=0 ); /* IE6-9 */
-    width: /*400px*/30%;
-    height: /*280px*//*350px*/325px;
-    margin: auto;
-    border-radius: 40px;
+
+.pres_idbloc2
+{
     position: relative;
-    /* box-shadow: 9px 9px 0px ; */
-    /* box-shadow: 6px 6px 0px ; */
+    width: 600px;
+    height: 320px;
+    overflow: hidden;
+    box-shadow: 0px 0px 30px #000000;
+    -o-box-shadow: 0px 0px 30px #000000;
+    -htm-box-shadow: 0px 0px 30px #000000;
+    -webkit-box-shadow: 0px 0px 30px #000000;
+    -moz-box-shadow: 0px 0px 30px #000000;
 }
-.objectif{
-    background-color: #4A4A4C;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    position: absolute;
-    left: calc((400px / 2 ) - (120px / 2));
-    top: calc((280px / 2 ) - (120px / 2));
-    border: 4px solid #26262D;
-}
-.lentille{
-    background-color: #312F34;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    position: absolute;
-    left: calc((400px / 2 ) - (80px / 2));
-    top: calc((280px / 2 ) - (80px / 2));
-    border: 4px solid #29292D;
-}
-.souslentille{
-    background-color: #312F32;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: absolute;
-    left: calc((400px / 2 ) - (30px / 2));
-    top: calc((280px / 2 ) - (30px / 2));
-    border: 4px solid #3C3A3F;
-}
-.pointe{
-    background-color: black;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    position: absolute;
-    left: calc((400px / 2 ) - (6px / 2));
-    top: calc((280px / 2 ) - (6px / 2));
-}
-.bandes{
-    background-color: white;
-    position: absolute;
-    left: 50%;
-    right: 0;
-    height: 18px;
-    top: calc(50% - (18px / 2));
-}
-.bandes > div{
-    height: calc(18px / 6);
-    width: 100%;
+
+.pres_avatar
+{
     display: block;
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 500px;
+    height: 320px;
+    overflow: hidden;
 }
-.bandes > div:nth-child(1){ background-color: #B25577; }
-.bandes > div:nth-child(2){ background-color: #E0823D; }
-.bandes > div:nth-child(3){ background-color: #E1B148; }
-.bandes > div:nth-child(4){ background-color: #BABD29; }
-.bandes > div:nth-child(5){ background-color: #4D9540; }
-.bandes > div:nth-child(6){ background-color: #0B6094; }
-.flash{
-    border: 4px solid #9E9388;
-    background-color: #978956;
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
+.pres_id1
+{
     position: absolute;
-    left: 80px;
-    top: 40px;
-    z-index: 19;
-    animation: flash 7s 1s linear infinite;
+    z-index: 2;
+    width: 500px;
+    height: 320px;
+    overflow: hidden;
+    margin-left: 450px;
+    background: #1b1b1b;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0px 0px 5px #000000;
+    -o-box-shadow: 0px 0px 5px #000000;
+    -htm-box-shadow: 0px 0px 5px #000000;
+    -webkit-box-shadow: 0px 0px 5px #000000;
+    -moz-box-shadow: 0px 0px 5px #000000;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
 }
-.fente{
-    background-color: #a7a7a7;
-    border: 1px solid #bdbdbd;
-    width: /*80%*/90%;
-    bottom: 20px;
+.pres_id1:hover
+{
+    margin-left: 0px;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
+}
+.pres_id2
+{
     position: absolute;
-    left: 5%;
-    height: 3px;
-    border-radius: 50%;
+    z-index: 3;
+    width: 500px;
+    height: 320px;
+    overflow: hidden;
+    margin-left: 480px;
+    background: #1b1b1b;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0px 0px 5px #000000;
+    -o-box-shadow: 0px 0px 5px #000000;
+    -htm-box-shadow: 0px 0px 5px #000000;
+    -webkit-box-shadow: 0px 0px 5px #000000;
+    -moz-box-shadow: 0px 0px 5px #000000;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
 }
-@keyframes flash {
-    0%{
-        background-color: white;
-        border-color: white;
-        transform: scale(1);
-    }
-    5% {
-        background-color: white;
-        border-color: white;
-        transform: scale(100);
-    }
-    7% {
-        border: 4px solid #9E9388;
-        background-color: #978956;
-        transform: scale(1);
-        opacity: 0;
-    }
-    8% {
-        opacity: 1;
-    }
-    100% {
-        border: 4px solid #9E9388;
-        background-color: #978956;
-        transform: scale(1);
-    }
+.pres_id2:hover
+{
+    margin-left: 25px;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
 }
-@keyframes imprime {
-    0%{
-        height: 0px;
-        transform: translateY(-20px);
-    }
-    20% {
-        height: 270px;
-        transform: translateY(-20px);
-    }
-    40% {
-        height: 270px;
-        transform: translateY(-20px);
-    }
-    100% {
-        height: 270px;
-        transform: translateY(100vh) rotate(45deg);
-    }
-}
-.photo{
-    background-color: #eee;
-    /* opacity: 0.5; */
-    filter:alpha(opacity=50);
-    -moz-opacity:0.5;
-    width: 510px;
-    height: 0px;
-    margin: auto;
+.pres_id3
+{
     position: absolute;
-    left: calc(50vw - 315px / 2);
-    transform: translateY(-20px);
-    /* animation: imprime 5s 1.5s linear infinite; */
-    animation: imprime 7s 3s /*linear infinite; */linear infinite;
+    z-index: 4;
+    width: 500px;
+    height: 320px;
+    overflow: hidden;
+    margin-left: 510px;
+    background: #1b1b1b;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0px 0px 5px #000000;
+    -o-box-shadow: 0px 0px 5px #000000;
+    -htm-box-shadow: 0px 0px 5px #000000;
+    -webkit-box-shadow: 0px 0px 5px #000000;
+    -moz-box-shadow: 0px 0px 5px #000000;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
 }
-.cache{
-    height: /*80%*/81%;
-    width: /*90%*/90%;
-    margin-left: 5%;
-    margin-top: 5%;
-    background-image: url('../image/hs.jpg');
+.pres_id3:hover
+{
+    margin-left: 50px;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
+}
+.pres_id4
+{
+    position: absolute;
+    z-index: 5;
+    width: 500px;
+    height: 320px;
+    overflow: hidden;
+    margin-left: 540px;
+    background: #1b1b1b;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0px 0px 5px #000000;
+    -o-box-shadow: 0px 0px 5px #000000;
+    -htm-box-shadow: 0px 0px 5px #000000;
+    -webkit-box-shadow: 0px 0px 5px #000000;
+    -moz-box-shadow: 0px 0px 5px #000000;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
+}
+.pres_id4:hover
+{
+    margin-left: 75px;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
+}
+.pres_id5
+{
+    position: absolute;
+    z-index: 5;
+    width: 500px;
+    height: 320px;
+    overflow: hidden;
+    margin-left: 570px;
+    background: #1b1b1b;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0px 0px 5px #000000;
+    -o-box-shadow: 0px 0px 5px #000000;
+    -htm-box-shadow: 0px 0px 5px #000000;
+    -webkit-box-shadow: 0px 0px 5px #000000;
+    -moz-box-shadow: 0px 0px 5px #000000;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
+}
+.pres_id5:hover
+{
+    margin-left: 100px;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
+}
+.pres_idtitle
+{
+    position: absolute;
+    display: block;
+    width: 320px;
+    margin-top: 160px;
+    margin-left: -150px;
+    text-align: center;
+    transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -htm-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    font-size: 16px;
+    letter-spacing: 4px;
+    font-size: 18px;
+    letter-spacing: 4px;
+    font-family: lucida calligraphy;
+    color: #5a5a5a;
+    text-shadow: 1px 1px 0px #000000;
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
+}
+.pres_id1:hover .pres_idtitle, .pres_id2:hover .pres_idtitle, .pres_id3:hover .pres_idtitle,
+.pres_id4:hover .pres_idtitle, .pres_id5:hover .pres_idtitle
+{
+    width: 500px;
+    margin-top: 5px;
+    margin-left: 0px;
+    text-align: center;
+    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -htm-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    -htm-transition: 1s;
+    -webkit-transition: 1s;
+}
+.message_soustitre
+{
+    font-size: 14px;
+    font-family: impact;
+    letter-spacing: 2px;
+}
+.pres_idcontent
+{
+    position: relative;
+    display: block;
+    width: 400px;
+    height: 270px;
+    overflow: auto;
+    margin: 25px 0px 0px 28px;
+    padding: 5px;
+    /* background: #bcbcbc; */
+    color: /*#6d6d6d*/ white !important;
+    box-shadow: 0px 0px 3px #735c0e;
+    -o-box-shadow: 0px 0px 3px #735c0e;
+    -htm-box-shadow: 0px 0px 3px #735c0e;
+    -webkit-box-shadow: 0px 0px 3px #735c0e;
+    -moz-box-shadow: 0px 0px 3px #735c0e;
+    font-size: 11px;
+    text-align: justify;
+    line-height: 12px;
 }
 /*-----------------------------cube-------------------------------------*/
 .wrap {

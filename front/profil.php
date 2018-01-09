@@ -55,37 +55,49 @@
         <?php include("inc/include_nav.php"); ?>
         <div class="meny-arrow"></div>
         <div class="contents">
+            <!--                <h1>Sandra HÉRISSON</h1>-->
+            <h1><?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></h1>
+            <br>
+            <h2>Mes objectifs pro.</h2>
+            <br>
+            <br>
             <div class="box">
-                <!--                <h1>Sandra HÉRISSON</h1>-->
-                <h1><?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></h1>
                 <br>
-                <h2>Mes objectifs pro.</h2>
-                <br>
-                <br>
-                <body id="top">
-                    <main>
-                        <div class="appareil">
-                            <div class="bandes">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <div class="objectif"></div>
-                            <div class="lentille"></div>
-                            <div class="souslentille"></div>
-                            <div class="pointe"></div>
-                            <div class="flash"></div>
-                            <div class="fente"></div>
-                        </div>
-                        <div class="photo"><div class="cache"></div></div>
-                        <!-- <div class="photo"><div class="cache"></div></div> -->
-                    </main>
-                    
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                </br>
+                                                                                                                                        <center><div class="pres_idbloc2"><span class="pres_avatar"><!--<img src="" alt="" />!--><p>faisons connaissance</p></span><div class="pres_id1"><span class="pres_idtitle">IDENTITE</span><span class="pres_idcontent">
+                                <span class="message_soustitre">Sandra  </span>
+                                <span class="message_soustitre">Hérisson  </span>
+                                <br>
+                                <span class="message_soustitre">42 ans - </span>
+                                <br>
+                                <span class="message_soustitre">Intégratrice, développeuse web </span>
+                                <br>
+                                <br>
+                                <span class="message_soustitre">Téléphone: 06 28 09 27 72 </span>
 
+
+
+                            </span></div><div class="pres_id2"><span class="pres_idtitle">Caractère</span><span class="pres_idcontent"><span class="message_soustitre">Qualités</span>
+                                Liste ou description...
+                                <span class="message_soustitre">Défauts</span>
+                                Liste ou description...
+
+                            </span></div><div class="pres_id3"><span class="pres_idtitle">Histoire</span><span class="pres_idcontent">
+                                Votre histoire...
+
+                            </span></div><div class="pres_id4"><span class="pres_idtitle">Relations / Objectifs</span><span class="pres_idcontent">
+                                <span class="message_soustitre">Relations avant jeu</span>
+                                Contenu.
+                                <span class="message_soustitre">Objectif(s)</span>
+                                Contenu.
+
+                            </span></div><div class="pres_id5"><span class="pres_idtitle">Joueur</span><span class="pres_idcontent">
+                                <span class="message_soustitre">Qui êtes-vous ?</span>
+                                Région, âge, expérience RP...
+                                <span class="message_soustitre">Pourquoi nous ?</span>
+                                Comment avez-vous découvert le forum ? Avez-vous eu des difficultés en arrivant ?
+                                => code du Règlement :
+                            </span></div></div><a href="" style="font-size: 10px;"></a></center>
             </div>
         </div>
         <script src="js/meny.js"></script>
