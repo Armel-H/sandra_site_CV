@@ -15,8 +15,8 @@
         <br/><br/>
     </ul>
     <ul>
-        <li><a href="https://codepen.io/dashboard/"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
-        <li><a href="https://www.linkedin.com/mynetwork/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li><a href="https://codepen.io/Sandra92/"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/sandra-herisson-887585145/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
         <li><a href="https://github.com/Armel-H"><i class="fa fa-github" aria-hidden="#"></i></a></li>
         <li><a href="https://www.facebook.com/profile.php?id=100018434137636"><i class="fa fa-facebook" aria-hidden="#"></i></a></li>
         <li><a href="contact.php"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>

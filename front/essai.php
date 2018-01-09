@@ -1,4 +1,4 @@
-<?php require('connection.php') ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,8 +10,9 @@
   <link href="https://fonts.googleapis.com/css?family=|Gentium+Book+BasicSource+Serif+Pro" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style1.css">
-  <title>profil</title>
   <!--script pour afficher l'heure en js!-->
+  <title>Objectifs pro.essai</title>
+
   <SCRIPT LANGUAGE="JavaScript">
   function HeureCheckEJS()
   {
@@ -47,18 +48,7 @@
 </head>
 <body>
   <div class="meny">
-    <h2>Explorez</h2>
-    <ul>
-      <li><a href="index.html">Profil</a></li>
-      <li><a href="formation_experience.html">Formations</a></li>
-      <li><a href="competence1.html">Compétences</a></li>
-      <li><a href="../../realisation.php">Réalisations</a></li>
-      <li><a href="loisir.html">Loisirs</a></li>
-      <li><a href="contact1.php">Contact</a></li>
-      <div class="heure">
-        <br /><p class="tt" ></p><br /><br />
-        <div id="ejs_heure">Initialisation</div>
-      </div>
+
       <!-- <li><a href="../../page-script-flash-menu.asp">menus flash</a></li> -->
       <br/><br/>
       <!-- <li><a href="../../page-generateur-CSS-bouton.asp">bouton CSS</a></li> -->
@@ -88,6 +78,8 @@
     <div class="fente"></div>
   </div>
   <div class="photo"><div class="cache"></div></div>
+
+</div>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>

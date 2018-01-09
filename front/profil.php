@@ -11,8 +11,8 @@
         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
         <link href="https://fonts.googleapis.com/css?family=|Gentium+Book+BasicSource+Serif+Pro" rel="stylesheet">
-         <link href="css/bootstrap.min.css" rel="stylesheet">
-         <link rel="stylesheet" href="css/style1.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style1.css">
         <title>Objectifs pro.</title>
         <?php
         $resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '1'");
@@ -63,27 +63,28 @@
                 <br>
                 <br>
                 <body id="top">
-               <main>
-                 <div class="appareil">
-                   <div class="bandes">
-                     <div></div>
-                     <div></div>
-                     <div></div>
-                     <div></div>
-                     <div></div>
-                     <div></div>
-                   </div>
-                   <div class="objectif"></div>
-                   <div class="lentille"></div>
-                   <div class="souslentille"></div>
-                   <div class="pointe"></div>
-                   <div class="flash"></div>
-                   <div class="fente"></div>
-                 </div>
-                 <div class="photo"><div class="cache"></div></div>
-                 <!-- <div class="photo"><div class="cache"></div></div> -->
-               </main>
-               <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                    <main>
+                        <div class="appareil">
+                            <div class="bandes">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="objectif"></div>
+                            <div class="lentille"></div>
+                            <div class="souslentille"></div>
+                            <div class="pointe"></div>
+                            <div class="flash"></div>
+                            <div class="fente"></div>
+                        </div>
+                        <div class="photo"><div class="cache"></div></div>
+                        <!-- <div class="photo"><div class="cache"></div></div> -->
+                    </main>
+                    
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
             </div>
         </div>

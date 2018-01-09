@@ -77,7 +77,7 @@
         <br><br>
         <h1><marquee direction="left">Intégratrice, développeuse web junior </marquee><h1>
 
-                <h2><marquee direction="right">Voici mon port-folio </marquee></h2>
+                <h2><marquee direction="right">Voici mon portfolio </marquee></h2>
                 <br><br>
                 <h2><marquee direction="left">EN RECHERCHE DE STAGE </marquee></h2>
                 </div>

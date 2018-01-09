@@ -67,7 +67,7 @@
                     <div class="page frnt">
                         <div class="bg">
                         </div>
-                        <p><h4>
+                        <p><h4>Mes EXPERIENCES ET MES FORMATIONS
                         </h4></p>
                     </div>
                     <div class="page bck">
@@ -166,7 +166,7 @@
                         </div>
                         <p>
                             <br><br>
-                            Merci de télécharger mon CV
+                            <a href="CV_sandra_herisson.pdf" target="_blank">Merci de télécharger mon CV</a>
                         </p>
                     </div>
                 </div>
