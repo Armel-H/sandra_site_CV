@@ -149,6 +149,7 @@ if(isset($_GET['id_realisation'])){
         </div>
 
     </div>
+    <?php include("inc/include_footer.php"); ?>
     <hr>
     <?php
     $resultat = $pdoCV -> query("SELECT * FROM t_realisations");

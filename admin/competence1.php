@@ -9,7 +9,7 @@ session_start();//à mettre dans toutes les pages de l'admin (même cette page)
     //echo $_SESSION['connexion'];
     //var_dump('$_SESSION');
   }else{//l'utilisateur n'est pas connecté
-    header('location : authentification1.php');
+    header('location : authentification.php');
   }// ferme le else du if isset
 
 $resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
@@ -154,4 +154,5 @@ if(isset($_GET['id_competence'])) {// ferme le if(isset) // Ici on récupère la
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+<?php include("inc/include_footer.php"); ?>
 </html>

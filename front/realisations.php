@@ -81,7 +81,7 @@
                                 <div class="item active">
                                     <div class="row">
                                         <div class="col-md-3"><a href="#" class="thumbnail"><img src="image/herisson.jpg" alt="Image" style="max-width:100%;"></a></div>
-                                        <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
+                                        <div class="col-md-3"><a href="http://generaction-solidaire.fr/" target="_blank" class="thumbnail"><img src="image/generaction-solidaire.png" alt="Image" style="max-width:100%;"></a></div>
                                         <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
                                         <div class="col-md-3"><a href="#" class="thumbnail"><img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;"></a></div>
                                     </div><!--.row-->

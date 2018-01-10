@@ -113,6 +113,4 @@
                 </p>
             </div>
         </div>
-
-    </body>
-</html>
+<?php include("inc/include_footer.php"); ?>

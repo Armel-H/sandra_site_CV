@@ -60,5 +60,5 @@ if(isset($_POST['connexion'])){// on envoie le formulaire avec le nom du bouton,
 
      </form>
 
-</body>
+<?php include("inc/include_footer.php"); ?>
 </html>

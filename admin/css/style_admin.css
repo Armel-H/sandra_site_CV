@@ -21,14 +21,14 @@ body {
 }
 
 
-.footer {
+/* .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
+  /* Set the fixed height of the footer here
   height: 60px;
   background-color: black;
-}
+} */
 .couleur-btn{
     background:black ;
     /* background:#630034 ; */
@@ -66,4 +66,15 @@ fieldset{
   text-align: left;
   border-color: black;
   /* border-color: white; */
+}
+/*-----------------------------------footer-----------------*/
+footer{
+    position: absolute;
+   background: black;
+   text-align: center;
+   height: 75px;
+   /* margin-top: 535px; */
+   color: white;
+   bottom: 0;
+   width: 100%;
 }

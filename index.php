@@ -108,5 +108,5 @@
             }
                 </script>
 
-
+<?php include("inc/include_footer.php"); ?>
                 </html>

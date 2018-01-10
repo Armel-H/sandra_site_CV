@@ -127,7 +127,7 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     ?>
 
 
-    
+
 
 
     </div>
@@ -148,4 +148,5 @@ $ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <?php include("inc/include_footer.php"); ?>
 </html>

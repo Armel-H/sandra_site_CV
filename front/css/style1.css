@@ -970,3 +970,8 @@ h4{
 .carousel-indicators .active {
     background: #428bca;
 }
+/*-----------------------------------footer-----------------*/
+footer{
+ background:linear-gradient(#130d0a , #363333 );
+ text-align: center;
+}
