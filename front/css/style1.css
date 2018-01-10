@@ -160,7 +160,7 @@ h5{
     color: white;
 }
 
-/*------------------appareil photo-------------*/
+/*------------------carte de visite------------*/
 
 .pres_idbloc2
 {
@@ -168,11 +168,11 @@ h5{
     width: 600px;
     height: 320px;
     overflow: hidden;
-    box-shadow: 0px 0px 30px #000000;
-    -o-box-shadow: 0px 0px 30px #000000;
-    -htm-box-shadow: 0px 0px 30px #000000;
-    -webkit-box-shadow: 0px 0px 30px #000000;
-    -moz-box-shadow: 0px 0px 30px #000000;
+    box-shadow: 0px 0px 50px #000000;
+    -o-box-shadow: 0px 0px 50px #000000;
+    -htm-box-shadow: 0px 0px 50px #000000;
+    -webkit-box-shadow: 0px 0px 50px #000000;
+    -moz-box-shadow: 0px 0px 50px #000000;
 }
 
 .pres_avatar

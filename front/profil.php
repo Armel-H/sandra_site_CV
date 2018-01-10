@@ -68,7 +68,9 @@
                                 <span class="message_soustitre">Sandra  </span>
                                 <span class="message_soustitre">Hérisson  </span>
                                 <br>
+                                <br>
                                 <span class="message_soustitre">42 ans - </span>
+                                <br>
                                 <br>
                                 <span class="message_soustitre">Intégratrice, développeuse web </span>
                                 <br>
@@ -77,27 +79,27 @@
 
 
 
-                            </span></div><div class="pres_id2"><span class="pres_idtitle">Caractère</span><span class="pres_idcontent"><span class="message_soustitre">Qualités</span>
+                         </span></div><div class="pres_id2"><span class="pres_idtitle">IMAGE</span><span class="pres_idcontent"><span class="message_soustitre">Qualités</span>
                                 Liste ou description...
                                 <span class="message_soustitre">Défauts</span>
                                 Liste ou description...
 
-                            </span></div><div class="pres_id3"><span class="pres_idtitle">Histoire</span><span class="pres_idcontent">
+                            </span></div><div class="pres_id3"><span class="pres_idtitle">RESEAUX</span><span class="pres_idcontent">
                                 Votre histoire...
 
-                            </span></div><div class="pres_id4"><span class="pres_idtitle">Relations / Objectifs</span><span class="pres_idcontent">
+                            </span></div><div class="pres_id4"><span class="pres_idtitle">OBJECTIFS</span><span class="pres_idcontent">
                                 <span class="message_soustitre">Relations avant jeu</span>
                                 Contenu.
                                 <span class="message_soustitre">Objectif(s)</span>
                                 Contenu.
 
-                            </span></div><div class="pres_id5"><span class="pres_idtitle">Joueur</span><span class="pres_idcontent">
+                         </span></div><div class="pres_id5"><span class="pres_idtitle">IMAGE</span><span class="pres_idcontent">
                                 <span class="message_soustitre">Qui êtes-vous ?</span>
                                 Région, âge, expérience RP...
                                 <span class="message_soustitre">Pourquoi nous ?</span>
                                 Comment avez-vous découvert le forum ? Avez-vous eu des difficultés en arrivant ?
                                 => code du Règlement :
-                            </span></div></div><a href="" style="font-size: 10px;"></a></center>
+                            </span></div></div><a href="" style="font-size: 10px;"></a>--></center>
             </div>
         </div>
         <script src="js/meny.js"></script>

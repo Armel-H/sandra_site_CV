@@ -126,29 +126,17 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
                 </div>
             </div>
 
-
             <hr>
             <?php
             $resultat = $pdoCV -> query("SELECT * FROM t_loisir");
             $ligne_loisir = $resultat -> fetch(PDO::FETCH_ASSOC);
             ?>
 
-
-            <!-- <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel-footer"></div>
-                        </div>
-                    </div>
-                </div>
-            </footer> -->
-
-
         </div>
     </div>
 </div>
-</body>
+
+<?php include("inc/include_footer.php"); ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
