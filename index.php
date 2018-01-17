@@ -63,6 +63,7 @@
             <li><a href="front/realisations.php">Réalisations</a></li>
             <li><a href="front/loisirs.php">Loisirs</a></li>
             <li><a href="front/contact.php">Contactez-moi</a></li>
+            <li><a href="admin/authentification.php">Admin</a></li>
             <br/><br/>
             <div class="heure">
                 <br /><p class="tt" ></p><br /><br />
@@ -108,5 +109,5 @@
             }
                 </script>
 
-<?php include("inc/include_footer.php"); ?>
+                <?php include("inc/include_footer.php"); ?>
                 </html>

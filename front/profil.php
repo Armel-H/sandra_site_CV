@@ -72,38 +72,47 @@
                                 <span class="message_soustitre">42 ans - </span>
                                 <br>
                                 <br>
-                                <span class="message_soustitre">Intégratrice, développeuse web </span>
+                                <span class="message_soustitre">Intégratrice, développeuse web junior </span>
                                 <br>
                                 <br>
                                 <span class="message_soustitre">Téléphone: 06 28 09 27 72 </span>
 
 
 
-                         </span></div><div class="pres_id2"><span class="pres_idtitle">IMAGE</span><span class="pres_idcontent"><span class="message_soustitre">Qualités</span>
-                                Liste ou description...
-                                <span class="message_soustitre">Défauts</span>
-                                Liste ou description...
+                            </span></div><div class="pres_id2"><span class="pres_idtitle">IMAGE</span><span class="pres_idcontent"><span class="soustitre"></span><img src="image/herisson.jpg" style="width:400px; height:270px;"/>
+
+                                <span class="message_soustitre"></span>
+
 
                             </span></div><div class="pres_id3"><span class="pres_idtitle">RESEAUX</span><span class="pres_idcontent">
-                                Votre histoire...
+
+                                <a href="https://codepen.io/Sandra92/"><i class="fa fa-codepen fa-stack-2x"style="color:white;" aria-hidden="true"></i></a>
+                                <br><br>
+
+                                <a href="https://www.linkedin.com/in/sandra-herisson-887585145/"><i class="fa fa-linkedin fa-stack-2x"style="color:white"; aria-hidden="true"></i></a>
+                                <br><br>
+                                <a href="https://github.com/Armel-H"><i class="fa fa-github fa-stack-2x"style="color:white;" aria-hidden="#"></i></a>
+                                <br><br>
+                                <a href="https://www.facebook.com/profile.php?id=100018434137636"><i class="fa fa-facebook fa-stack-2x" aria-hidden="#" style="color:white;"></i></a>
+                                <br><br>
+                                <a href="contact.php"><i class="fa fa-envelope fa-stack-2x"style="color:white;" aria-hidden="true"></i></a>
 
                             </span></div><div class="pres_id4"><span class="pres_idtitle">OBJECTIFS</span><span class="pres_idcontent">
-                                <span class="message_soustitre">Relations avant jeu</span>
-                                Contenu.
+                                <span class="message_soustitre"> </span>
+
                                 <span class="message_soustitre">Objectif(s)</span>
                                 Contenu.
 
-                         </span></div><div class="pres_id5"><span class="pres_idtitle">IMAGE</span><span class="pres_idcontent">
-                                <span class="message_soustitre">Qui êtes-vous ?</span>
-                                Région, âge, expérience RP...
-                                <span class="message_soustitre">Pourquoi nous ?</span>
-                                Comment avez-vous découvert le forum ? Avez-vous eu des difficultés en arrivant ?
-                                => code du Règlement :
-                            </span></div></div><a href="" style="font-size: 10px;"></a>--></center>
-            </div>
-        </div>
-        <script src="js/meny.js"></script>
-        <script>
+                            </span></div><div class="pres_id5"><span class="pres_idtitle">IMAGE</span><span class="pres_idcontent">
+                                <span class="message_soustitre"></span><img src="image/lettres-gothiques.jpg" style="width:400px;height:270px;"/>
+
+                                <span class="message_soustitre"></span>
+
+                            </span></center>
+                        </div>
+                    </div>
+                    <script src="js/meny.js"></script>
+                    <script>
             var meny = Meny.create({
                 menuElement: document.querySelector('.meny'),
                 contentsElement: document.querySelector('.contents'),
@@ -126,9 +135,9 @@
                 contents.style.padding = '0px';
                 contents.innerHTML = '<div class="cover"></div><iframe src="' + Meny.getQuery().u + '" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
             }
-        </script>
+                    </script>
 
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/index2.js"></script>
-    </body>
-</html>
+                    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+                    <script type="text/javascript" src="js/index2.js"></script>
+                    </body>
+                    </html>

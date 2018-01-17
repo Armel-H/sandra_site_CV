@@ -8,6 +8,7 @@
         <li><a href="realisations.php">Réalisations</a></li>
         <li><a href="loisirs.php">Loisirs</a></li>
         <li><a href="contact.php">Contactez-moi</a></li>
+        <li><a href="../admin/authentification.php">Admin</a></li>
         <div class="heure">
             <br /><p class="tt" ></p><br /><br />
             <div id="ejs_heure">Initialisation</div>
