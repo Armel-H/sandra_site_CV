@@ -2,7 +2,6 @@
 //Formulaire/index.php
 // on récupère la classe Contact
 require('Contact.class.php');
-
 // on vérifie que le formulaire a été posté
 if (!empty($_POST)) {
     // on éclate le $_POST en tableau qui permet d'accéder directement aux champs par des variables
@@ -30,7 +29,6 @@ unset($c_email);
 unset($c_sujet);
 unset($c_message);
 unset($c_contact);
-
 // on créé une variable de succès
 $success = 'Message envoyé !';
 ?>
@@ -147,7 +145,6 @@ $success = 'Message envoyé !';
 // [optional] utilisation de l'approche
                 touch: true
             });
-
             if (Meny.getQuery().u && Meny.getQuery().u.match(/^http/gi)) {
                 var contents = document.querySelector('.contents');
                 contents.style.padding = '0px';
