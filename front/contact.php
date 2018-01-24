@@ -100,22 +100,22 @@ $success = 'Message envoyé !';
                     <div id="form-div">
                         <div class="form" id="form1">
                             <!-- <form class="form" id="form1">  -->
-                            <label for="nom">Nom :</label>
+                            <label for="nom"style="color:white;">Nom :</label>
                             <span class="error"><?php if (isset($erreurnom)) echo $erreurnom; ?></span>
                             <input class="form-control" type="text" name="c_nom" value="<?php if (isset($c_nom)) echo $c_nom; ?>">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email :</label>
+                            <label for="email"style="color:white;">Email :</label>
                             <span class="error"><?php if (isset($erreuremail)) echo $erreuremail; ?></span>
                             <input id="email" class="form-control" type="text" name="c_email" value="<?php if (isset($c_email)) echo $c_email; ?>">
                         </div>
                         <div class="form-group">
-                            <label for="sujet">Sujet :</label>
+                            <label for="sujet"style="color:white;">Sujet :</label>
                             <span class="error"><?php if (isset($erreursujet)) echo $erreursujet; ?></span>
                             <input class="form-control" type="text" name="c_sujet" value="<?php if (isset($c_sujet)) echo $c_sujet; ?>">
                         </div>
                         <div class="form-group">
-                            <label for="message">Message :</label>
+                            <label for="message"style="color:white;">Message :</label>
                             <span class="error"><?php if (isset($erreurmessage)) echo $erreurmessage; ?></span>
                             <textarea class="form-control" name="c_message" cols="30" rows="10"><?php if (isset($c_message)) echo $c_message; ?></textarea>
                         </div>
@@ -134,17 +134,17 @@ $success = 'Message envoyé !';
             var meny = Meny.create({
                 menuElement: document.querySelector('.meny'),
                 contentsElement: document.querySelector('.contents'),
-                // [optional] alignement du menu (top/right/bottom/left)
+// [optional] alignement du menu (top/right/bottom/left)
                 position: Meny.getQuery().p || 'left',
-                // [optional] hauteur du menu (pour la position top ou bottom)
+// [optional] hauteur du menu (pour la position top ou bottom)
                 height: 200,
-                // [optional] largeur du menu (pour la position left ou right)
+// [optional] largeur du menu (pour la position left ou right)
                 width: 260,
-                // [optional] distance de d�clenchement du menu par rapport au menu
+// [optional] distance de d�clenchement du menu par rapport au menu
                 threshold: 40,
-                // [optional] utilisation des mouvement de la souris pour l'ouverture ou la fermeture
+// [optional] utilisation des mouvement de la souris pour l'ouverture ou la fermeture
                 mouse: true,
-                // [optional] utilisation de l'approche
+// [optional] utilisation de l'approche
                 touch: true
             });
 

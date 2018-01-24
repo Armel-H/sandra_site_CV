@@ -101,8 +101,8 @@
                                 <span class="message_soustitre"> </span>
 
                                 <span class="message_soustitre">Objectif(s)</span>
-                                Contenu.
-
+                                <p> Mes objectifs sont de parfaire mon expérience en effectuant un stage au sein d'une entreprise qui m'aidera à mettre en valeur mon potentiel.
+                                    je voudrais ensuite trouver un emploi stable dans une société innovante et qui continuera à me former.</p>
                             </span></div><div class="pres_id5"><span class="pres_idtitle">IMAGE</span><span class="pres_idcontent">
                                 <span class="message_soustitre"></span><img src="image/lettres-gothiques.jpg" style="width:400px;height:270px;"/>
 

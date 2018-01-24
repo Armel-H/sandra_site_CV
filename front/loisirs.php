@@ -85,8 +85,8 @@
         <div class="crawl">
             <div>
                 <p>
-                <h2>Le cinema</h2>
-                J'aime le cinéma. mes goûts sont trés diverses et variés.
+                <h2>Le cinéma</h2>
+                J'aime le cinéma. Mes goûts sont trés diverses et variés.
                 La science-fiction, les thrillers, les films d'horreurs,
                 les films historiques.
                 </p>
@@ -100,11 +100,11 @@
                 </p>
                 <p>
                 <h2>La musique</h2>
-                j'aime la chanson française et étrangère( brassens, Les compagnons de la chanson, Fréhel, cabrel, Renaud, sardou, Kyo, Indochine, Deep purple, Pink Floyd, King Crimson, Polnareff, Coldplay, t-Rex etc....).
+                j'aime la chanson française et étrangère( Brassens, Les Compagnons de la chanson, Fréhel, Cabrel, Renaud, sardou, Kyo, Indochine, Deep purple, Pink Floyd, King Crimson, Polnareff, Coldplay, t-Rex etc....).
                 </p>
                 <p>
                 <h2>Les voyages</h2>
-                J'adore voyager. Je suis allée en Angleterre, en Allemagne, en Belgique, en Italie, en Espagne, au Portugal et j'ai pour projet le Canada et l'Autralie.
+                J'adore voyager. Je suis allée en Angleterre, en Allemagne, en Belgique, en Espagne, en Italie, au Portugal et j'ai pour projet le Canada et l'Autralie.
                 </p>
                 <p>
                 <h2>Le dessin</h2>
@@ -113,4 +113,4 @@
                 </p>
             </div>
         </div>
-<?php include("inc/include_footer.php"); ?>
+        <?php include("inc/include_footer.php"); ?>

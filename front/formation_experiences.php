@@ -58,8 +58,8 @@
             <h2>Expériences et Formations</h2>
             <style id="look">
             </style>
-            <button id="turn-right">Next Page</button>
-            <button id="turn-left">Previous Page</button>
+            <button id="turn-right">Page précédente</button>
+            <button id="turn-left">Page suivante</button>
             <!-- <button id="turn-left">Next Page</button>
             <button id="turn-right">Previous Page</button> -->
             <div id="book">

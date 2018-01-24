@@ -14,11 +14,11 @@ a{
     color : /*black;*//*purple*/#2D1122;
     text-decoration: none;
 
-    -webkit-transition: 0.15s color ease;
-    -moz-transition: 0.15s color ease;
-    -ms-transition: 0.15s color ease;
-    -o-transition: 0.15s color ease;
-    transition: 0.15s color ease;
+    -webkit-transition: /*0.15s*/0.05s color ease;
+    -moz-transition: /*0.15s*/0.05s color ease;
+    -ms-transition: /*0.15s*/0.05s color ease;
+    -o-transition: /*0.15s*/0.05s color ease;
+    transition: /*0.15s*/0.05s color ease;
 }
 
 a:hover {
@@ -972,6 +972,6 @@ h4{
 }
 /*-----------------------------------footer-----------------*/
 footer{
- background:linear-gradient(#130d0a , #363333 );
- text-align: center;
+    background:linear-gradient(#130d0a , #363333 );
+    text-align: center;
 }
