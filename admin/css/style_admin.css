@@ -4,31 +4,28 @@
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  /*position: relative;
-  min-height: 100%;*/
+    position: relative;
+    min-height: 100%;
 }
+
 body {
- background-image: url(../img/ring.jpg) ;
- background-size: cover;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-/* background-repeat: repeat-x; */
-   /*Margin bottom by footer height*/
- /*margin-bottom: 60px;*/
- /* margin: auto;
- margin-bottom: 10px; */
+
+    /* Margin bottom by footer height */
+    margin-bottom: 40px;
+    background-image: url(../img/ring.jpg) ;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
-
-
-/* .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here
-  height: 60px;
-  background-color: black;
-} */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 40px;
+    background-color: #f5f5f5;
+}
 .couleur-btn{
     background:black ;
     /* background:#630034 ; */
@@ -42,39 +39,39 @@ body {
 
 }
 .couleur-nav{
-  background: black;
-  /* background: #630034; */
+    background: black;
+    /* background: #630034; */
 }
 th{
-  color: black ;
-  /* color: #630034 ; */
+    color: black ;
+    /* color: #630034 ; */
 }
 h1{
-  color: white;
+    color: white;
 }
 h3{
-  color:black;
-  /* color:#E8AFA0; */
+    color:black;
+    /* color:#E8AFA0; */
 }
 label{
- color: black;
- /* color: #630034; */
+    color: black;
+    /* color: #630034; */
 }
 fieldset{
-  height: 40%;
-  width: 20%;
-  text-align: left;
-  border-color: black;
-  /* border-color: white; */
+    height: 40%;
+    width: 20%;
+    text-align: left;
+    border-color: black;
+    /* border-color: white; */
 }
 /*-----------------------------------footer-----------------*/
 footer{
-    position: absolute;
-   background: black;
-   text-align: center;
-   height: 75px;
-   /* margin-top: 535px; */
-   color: white;
-   bottom: 0;
-   width: 100%;
+    position: fixed;
+    background: black;
+    text-align: center;
+    height: 75px;
+    /* margin-top: 535px; */
+    color: white;
+    bottom: 0;
+    width: 100%;
 }

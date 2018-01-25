@@ -1,4 +1,7 @@
-<?php require('connexion.php'); ?>
+<?php
+require('connexion.php');
+// Connexion à la table t_formations
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -75,6 +78,7 @@
                         </div>
                         <p><br>Mes formations
                             <br><br>
+
                             2017=> Certification de développeur et intégrateur Web
                             <br>
                             Webforce3 et LepôleS (formation labellisée Grande Ecole du Numérique- Techniques de développement Web et  mobile)

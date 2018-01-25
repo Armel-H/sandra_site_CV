@@ -1,78 +1,74 @@
 <?php
 require('connexion.php');
 
-session_start();//à mettre dans toutes les pages de l'admin (même cette page)
-  if(isset($_SESSION['connexion']) && $_SESSION['connexion']=='connecté'){//on établit que la variable de session est passée et contient bien le terme "connexion"
-    $id_utilisateur=$_SESSION['id_utilisateur'];
-    $prenom=$_SESSION['prenom'];
-    $nom=$_SESSION['nom'];
+session_start(); //à mettre dans toutes les pages de l'admin (même cette page)
+if (isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'connecté') {//on établit que la variable de session est passée et contient bien le terme "connexion"
+    $id_utilisateur = $_SESSION['id_utilisateur'];
+    $prenom = $_SESSION['prenom'];
+    $nom = $_SESSION['nom'];
     //echo $_SESSION['connexion'];
     //var_dump('$_SESSION');
-  }else{//l'utilisateur n'est pas connecté
+} else {//l'utilisateur n'est pas connecté
     header('location : authentification.php');
-  }// ferme le else du if isset
+}// ferme le else du if isset
 
-$resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
-$ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
+$resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
+$ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
 ?>
 <?php
-
-if(isset($_POST['f_titre'])){ // Si on a posté une nouvelle compétence
-    if(!empty($_POST['f_titre']) && !empty($_POST['f_soustitre']) && !empty($_POST['f_dates']) && !empty($_POST['f_description'])){ // Si compétence n'est pas vide
+if (isset($_POST['f_titre'])) { // Si on a posté une nouvelle compétence
+    if (!empty($_POST['f_titre']) && !empty($_POST['f_soustitre']) && !empty($_POST['f_dates']) && !empty($_POST['f_description'])) { // Si formation n'est pas vide
         $titre = addslashes($_POST['f_titre']);
         $sousTitre = addslashes($_POST['f_soustitre']);
         $dates = addslashes($_POST['f_dates']);
         $description = addslashes($_POST['f_description']);
-        $pdoCV -> exec("INSERT INTO t_formations (f_titre, f_soustitre, f_dates, f_description, utilisateur_id) VALUES ('$titre', '$sousTitre', '$dates', '$description', '1')"); // mettre $id_utilisateur quand on l'aura dans la variable de session
+        $pdoCV->exec("INSERT INTO t_formations VALUES (NULL, '$titre', '$sousTitre', '$dates', '$description', '1')"); // mettre $id_utilisateur quand on l'aura dans la variable de session
         header("location:formation.php");
         exit();
-
     }// ferme if n'est pas vide
 }
 
-// Supression d'une compétence
-if(isset($_GET['id_formation'])){
-    // on récupère la compétence par son ID dans l'url
+// Supression d'une formation
+if (isset($_GET['id_formation'])) {
+    // on récupère la formation par son ID dans l'url
     $efface = $_GET['id_formation'];
     $resultat = " DELETE FROM t_formations WHERE id_formation = '$efface' ";
-    $pdoCV ->query($resultat);
+    $pdoCV->query($resultat);
     header("location: formation.php");
 } // ferme le if isset supression
-
 //$resultat = $pdoCV -> prepare("SELECT * FROM t_formations WHERE utilisateur_id = '1'");
 //$resultat -> execute();
 //$nbr_formation =  $resultat -> rowCount();
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
-    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
+        <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style_admin.css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style_admin.css" rel="stylesheet">
 
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-    <!-- nav en include -->
-    <?php include("inc/include_nav.php"); ?>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- nav en include -->
+        <?php include("inc/include_nav.php"); ?>
         <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
     </div>
     <?php
-    $resultat = $pdoCV -> prepare("SELECT * FROM t_formations WHERE utilisateur_id = '1'");
-    $resultat -> execute();
+    $resultat = $pdoCV->prepare("SELECT * FROM t_formations WHERE utilisateur_id = '1'");
+    $resultat->execute();
     $nbr_formation = $resultat->rowCount();
     //$ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
     ?>
@@ -100,11 +96,11 @@ if(isset($_GET['id_formation'])){
 
                                 </tr>
                                 <tr>
-                                    <?php while($ligne_formation = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
-                                        <td><?php echo $ligne_formation['f_titre'] ;?></td>
-                                        <td><?php echo $ligne_formation['f_soustitre'] ;?></td>
-                                        <td><?php echo $ligne_formation['f_dates'] ;?></td>
-                                        <td><?php echo $ligne_formation['f_description'] ;?></td>
+                                    <?php while ($ligne_formation = $resultat->fetch(PDO::FETCH_ASSOC)) { ?>
+                                        <td><?php echo $ligne_formation['f_titre']; ?></td>
+                                        <td><?php echo $ligne_formation['f_soustitre']; ?></td>
+                                        <td><?php echo $ligne_formation['f_dates']; ?></td>
+                                        <td><?php echo $ligne_formation['f_description']; ?></td>
                                         <td><a href="modif_formation.php?id_formation=<?= $ligne_formation['id_formation']; ?>">Modifier</a></td>
                                         <td><a href="formation.php?id_formation=<?= $ligne_formation['id_formation']; ?>">Supprimer</a></td>
                                     </tr>
@@ -136,10 +132,10 @@ if(isset($_GET['id_formation'])){
                             </div>
                             <div class="form-group">
                                 <label for="f_description">Description</label>
-                                <textarea class="form-control" id="editor1" name="f_description" placeholder="Décrire la formation"></textarea>
+                                <textarea class="form-control" id="editor1" name="f_description">Décrire la formation</textarea>
                             </div>
                             <script >
-                              CKEDITOR.replace('editor1');
+                                CKEDITOR.replace('editor1');
                             </script>
                             <button type="submit" class="btn btn-info btn-block couleur-btn">Envoyer</button>
                         </form>
@@ -151,9 +147,8 @@ if(isset($_GET['id_formation'])){
     </div>
     <hr>
     <?php
-    $resultat = $pdoCV -> query("SELECT * FROM t_formations");
-    $ligne_formation = $resultat -> fetch(PDO::FETCH_ASSOC);
-
+    $resultat = $pdoCV->query("SELECT * FROM t_formations");
+    $ligne_formation = $resultat->fetch(PDO::FETCH_ASSOC);
     ?>
 
 
@@ -166,7 +161,7 @@ if(isset($_GET['id_formation'])){
             </div>
         </div>
     </footer>
- -->
+    -->
 
 </div>
 </div>
