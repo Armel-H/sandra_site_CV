@@ -65,65 +65,69 @@ require('connexion.php');
             <button id="turn-left">Page suivante</button>
             <!-- <button id="turn-left">Next Page</button>
             <button id="turn-right">Previous Page</button> -->
+
             <div id="book">
                 <div class="flip">
                     <div class="page frnt">
                         <div class="bg">
                         </div>
+
                         <p><h4>Mes EXPERIENCES ET MES FORMATIONS
                         </h4></p>
                     </div>
+
                     <div class="page bck">
                         <div class="bg">
                         </div>
                         <p><br>Mes formations
+
                             <br><br>
 
-                            2017=> Certification de développeur et intégrateur Web
+                            2017 => Certification de développeur et intégrateur Web
                             <br>
-                            Webforce3 et LepôleS (formation labellisée Grande Ecole du Numérique- Techniques de développement Web et  mobile)
+                            Webforce3 et LepôleS (formation labellisée Grande Ecole du Numérique- Techniques de développement Web et mobile)
                             <br>
                             Villeneuve-La-garenne
                             <br><br>
-                            1997=> B.A.F.A (brevet d'aptitudes aux fonctions d'animateur)
+                            1997 => B.A.F.A (brevet d'aptitudes aux fonctions d'animateur)
                             <br>
                             Nevers
                             <br><br>
-                            1996=> Certification d'Hôtesse d'accueil bilingue
+                            1996 => Certification d'Hôtesse d'accueil bilingue
                             <br>
                             Expressions et Communications La-Plaine-Saint-Denis
                         </p>
                     </div>
                 </div>
-                <div class="flip">
-                    <div class="page frnt">
-                        <div class="bg">
+                <div class = "flip">
+                    <div class = "page frnt">
+                        <div class = "bg">
                         </div>
                         <p><br>
                             <br><br>
-                            1995=> BAC Sciences médico-Sociales
+                            1995 => BAC Sciences médico-Sociales
                             <br>
                             Lycée rené Auffray Clichy
                             <br><br>
-                            1993=> B.E.P des Carrières Sanitaires et médico-Sociales
+                            1993 => B.E.P des Carrières Sanitaires et médico-Sociales
                             <br>
                             Lycée René Auffray Clichy
                             <br><br>
-                            1992=> Brevet National de Secourisme
+                            1992 => Brevet National de Secourisme
                             <br>
                             Les Pompiers de Paris et Lycée René Auffray Clichy
                         </p>
                     </div>
-                    <div class="page bck">
-                        <div class="bg">
+                    <div class = "page bck">
+                        <div class = "bg">
                         </div>
                         <p><br>Mes expériences
                             <br><br>
-                            juin 2017=> Développeur Intégrateur Web
+                            juin 2017 => Développeur Intégrateur Web
                             <br>
                             LepôleS Villeneuve-la-Garenne
                             <br><br>
-                            2011/2014=> Agent d'entretient
+                            2011/2014 => Agent d'entretient
                             <br>
                             Houservices Levallois
                             <br><br>
@@ -131,46 +135,46 @@ require('connexion.php');
                             <br>
                             Arthur & Tiffen Paris
                             <br><br>
-                            2006/2010=> Agent administratif
+                            2006/2010 => Agent administratif
                             <br>
                             Lycée Honoré de Balzac Paris
                             <br><br>
-                            2005/2006=> Aide à domicile
+                            2005/2006 => Aide à domicile
                             <br>
                             Clichy
                             <br><br>
-                            1995=> Assistante de vie aux familles
+                            1995 => Assistante de vie aux familles
                             <br>
                             Familles et Cités Paris
                             <br><br>
-                            1993=> Aide-soignante stagiaire en gériatrie
+                            1993 => Aide-soignante stagiaire en gériatrie
                             <br>
                             Maisons de retraites Garigliano et la Cité des Fleurs Neuilly
                             <br><br>
                         </p>
                     </div>
                 </div>
-                <div class="flip">
-                    <div class="page frnt">
-                        <div class="bg">
+                <div class = "flip">
+                    <div class = "page frnt">
+                        <div class = "bg">
                         </div>
                         <p><br>
                             <br><br>
-                            1992/1993=> Animatrice de Centre de loisirs
+                            1992/1993 => Animatrice de Centre de loisirs
                             <br>
                             Ecole Condorcet Clichy
                             <br><br>
-                            1992=> Auxilliaire de puériculture stagiaire
+                            1992 => Auxilliaire de puériculture stagiaire
                             <br>
                             Crêche de Zodiaque Courbevoie
                         </p>
                     </div>
-                    <div class="page bck">
-                        <div class="bg">
+                    <div class = "page bck">
+                        <div class = "bg">
                         </div>
                         <p>
                             <br><br>
-                            <a href="CV_sandra_herisson.pdf" target="_blank">Merci de télécharger mon CV</a>
+                            <a href = "CV_sandra_herisson.pdf" target = "_blank">Merci de télécharger mon CV</a>
                         </p>
                     </div>
                 </div>

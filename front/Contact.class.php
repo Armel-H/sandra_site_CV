@@ -34,7 +34,7 @@ class Contact {
         // on crée une requête puis on l'exécute
         $req = $pdoCV->prepare('INSERT INTO t_commentaire (c_nom, c_email, c_sujet, c_message) VALUES (:c_nom, :c_email, :c_sujet, :c_message)');
         $req->execute([
-            ':c_nom' => $this->c_nom, //n attribue à la variable co_nom la valeur de l'objet en cours d'instanciation, le nom de l'auteur du message qui vient d'^tre posté
+            ':c_nom' => $this->c_nom, //n attribue à la variable co_nom la valeur de l'objet en cours d'instanciation, le nom de l'auteur du message qui vient d'être posté
             ':c_email' => $this->c_email,
             ':c_sujet' => $this->c_sujet,
             ':c_message' => $this->c_message]);

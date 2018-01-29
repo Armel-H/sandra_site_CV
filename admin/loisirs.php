@@ -1,35 +1,34 @@
 
 <?php
 require('connexion.php');
-session_start();//à mettre dans toutes les pages de l'admin (même cette page)
-  if(isset($_SESSION['connexion']) && $_SESSION['connexion']=='connecté'){//on établit que la variable de session est passée et contient bien le terme "connexion"
-    $id_utilisateur=$_SESSION['id_utilisateur'];
-    $prenom=$_SESSION['prenom'];
-    $nom=$_SESSION['nom'];
+session_start(); //à mettre dans toutes les pages de l'admin (même cette page)
+if (isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'connecté') {//on établit que la variable de session est passée et contient bien le terme "connexion"
+    $id_utilisateur = $_SESSION['id_utilisateur'];
+    $prenom = $_SESSION['prenom'];
+    $nom = $_SESSION['nom'];
     //echo $_SESSION['connexion'];
     //var_dump('$_SESSION');
-  }else{//l'utilisateur n'est pas connecté
+} else {//l'utilisateur n'est pas connecté
     header('location : authentification.php');
-  }// ferme le else du if isset
+}// ferme le else du if isset
 
-$resultat = $pdoCV -> query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
-$ligne_utilisateur = $resultat -> fetch(PDO::FETCH_ASSOC);
+$resultat = $pdoCV->query("SELECT * FROM t_utilisateur WHERE id_utilisateur = '$id_utilisateur'");
+$ligne_utilisateur = $resultat->fetch(PDO::FETCH_ASSOC);
 ?>
 <?php
 //comment
 // gestion des contenus de la BDD
 // Insertion des compétences
-if(isset($_POST['loisir'])) {// Si on a  posté une nouvelle compétence.
-    if(!empty($_POST['loisir'])){// si compétence n'est aps vide.
+if (isset($_POST['loisir'])) {// Si on a  posté une nouvelle compétence.
+    if (!empty($_POST['loisir'])) {// si compétence n'est aps vide.
         $loisir = addslashes($_POST['loisir']);
-        $pdoCV->exec("INSERT INTO t_loisir VALUES (NULL, '$loisir', '1')");// mettre $id_utilisateur quand on l'aura dans la variable de session.
-        header("location: loisirs.php");// Pour revenir sur la page.
+        $pdoCV->exec("INSERT INTO t_loisir VALUES (NULL, '$loisir', '1')"); // mettre $id_utilisateur quand on l'aura dans la variable de session.
+        header("location: loisirs.php"); // Pour revenir sur la page.
         exit();
     }// Ferme le if(!empty)
 }// ferme le if(isset)du formulaire
-
 // Suppréssion d'une compétence
-if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la competence par son id_ ds l'URL
+if (isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la competence par son id_ ds l'URL
     $efface = $_GET['id_loisir'];
     $resultat = "DELETE FROM t_loisir WHERE id_loisir ='$efface'";
     $pdoCV->query($resultat);
@@ -39,32 +38,32 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
-<title>Admin : <?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style_admin.css" rel="stylesheet">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Admin : <?= $ligne_utilisateur['pseudo']; ?></title>
+        <title>Admin : <?= $ligne_utilisateur['prenom'] . ' ' . $ligne_utilisateur['nom']; ?></title>
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style_admin.css" rel="stylesheet">
 
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-    <!-- nav en include -->
-    <?php include("inc/include_nav.php"); ?>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- nav en include -->
+        <?php include("inc/include_nav.php"); ?>
         <h3>Admin <?= $ligne_utilisateur['prenom']; ?></h3>
     </div>
     <?php
-    $resultat = $pdoCV -> prepare("SELECT * FROM t_loisir WHERE utilisateur_id = '1'");
-    $resultat -> execute();
+    $resultat = $pdoCV->prepare("SELECT * FROM t_loisir WHERE utilisateur_id = '1'");
+    $resultat->execute();
     $nbr_loisir = $resultat->rowCount();
     //$ligne_competence = $resultat -> fetch(PDO::FETCH_ASSOC);
     ?>
@@ -88,8 +87,8 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <?php while($ligne_loisir = $resultat -> fetch(PDO::FETCH_ASSOC) ) {?>
-                                            <td><?php echo $ligne_loisir['loisir'] ;?></td>
+                                        <?php while ($ligne_loisir = $resultat->fetch(PDO::FETCH_ASSOC)) { ?>
+                                            <td><?php echo $ligne_loisir['loisir']; ?></td>
                                             <td><a href="modif_loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">modifier</a></td>
                                             <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">supprimer</a></td>
                                         </tr>
@@ -128,15 +127,15 @@ if(isset($_GET['id_loisir'])) {// ferme le if(isset) // Ici on récupère la com
 
             <hr>
             <?php
-            $resultat = $pdoCV -> query("SELECT * FROM t_loisir");
-            $ligne_loisir = $resultat -> fetch(PDO::FETCH_ASSOC);
+            $resultat = $pdoCV->query("SELECT * FROM t_loisir");
+            $ligne_loisir = $resultat->fetch(PDO::FETCH_ASSOC);
             ?>
 
         </div>
     </div>
 </div>
 
-<?php include("inc/include_footer.php"); ?>
+<?php //include("inc/include_footer.php");  ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

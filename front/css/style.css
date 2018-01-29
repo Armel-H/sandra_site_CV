@@ -1,4 +1,12 @@
-* {
+footer{
+    position: fixed;
+    background: black;
+    text-align: center;
+    height: 25px;
+    /* margin-top: 535px; */
+    color: white;
+    bottom: 0;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
@@ -16,30 +24,8 @@ body {
     /* � supprimer*/
     background-color: url(image1.png) repeat-x #000000;;
 }
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 40px;
-    background-color: #f5f5f5;
-}
 
-/*html,
-body {
-    height: 100%;
-    overflow: hidden;
 
-}*/
-
-/*body {
-    font-family: 'Lato', Helvetica, sans-serif;
-    font-size: 16px;
-    color: #222;
-    /* � supprimer*/
-/*background-color: url(image1.png) repeat-x #000000;;
-/* -------- d
-}*/
 
 a {
     /*color: #99CC00;*/
@@ -314,18 +300,6 @@ body {
     /*overflow: hidden;*/
 }
 
-/*square {
-/*background: url(https://images.unsplash.com/photo-1492136344046-866c85e0bf04?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&s=7036fe8cee91c428eac037539c879c54)
--50px 120px;*/
-/*background-size: 140%;
-/*width: 150%;/*100%*/
-/*height: 80px;
-/*	position: /*absolute;*//*relative;
-/*z-index: -1;
-/*animation-delay: 1s;*/
-/*animation-timing-function: ease;*/
-/*}*/
-
 #identity-block {
     position: absolute;
     /*width: 40%;
@@ -434,19 +408,7 @@ p {
     padding-top: 2vh;
 }
 /*------------Texte effets Star wars-----------------*/
-/*body {
-width: 100%;
-height: 100%;
-background: black;
-margin: 0;
-overflow: hidden; /* Evite la scrollbar */
 
-/* Center items */
-/
-/*display: flex;
-align-items: center;
-justify-content: center;
-}*/
 
 .a-long-time-ago {
     /* cosmétique */

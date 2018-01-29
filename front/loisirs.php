@@ -1,6 +1,8 @@
-<?php require('connexion.php'); ?>
+<?php
+require('connexion.php');
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,17 +86,22 @@
         <!--fin du menu!-->
         <div class="crawl">
             <div>
+                <?php //while ($ligne_loisir = $resultat->fetch(PDO::FETCH_ASSOC) { ?>
+                <?php //echo $ligne_loisir['loisir']; ?>
+
+
                 <p>
                 <h2>Le cinéma</h2>
-                J'aime le cinéma. Mes goûts sont trés diverses et variés.
+                J'aime le cinéma. Mes goûts sont très diverses et variés.
                 La science-fiction, les thrillers, les films d'horreurs,
                 les films historiques.
                 </p>
+
                 <p>
                 <h2>La lecture</h2>
-                les classiques(Balzac, Mautpassant, shakespear, Bazin).
-                Les romans policiers(Agatha Christie, P.D James, Dashiell Hammet, Maxim Chattam, Conan Doyle, Edgar Poe ).
-                Les romans d'aventures et d'anticipation( Jules Verne, Franck Herbert, Arthur C.Clark, JRR Tolkien).
+                les classiques(Balzac, Mautpassant, Shakespeare, Bazin).
+                Les romans policiers (Agatha Christie, P.D James, Dashiell Hammet, Maxim Chattam, Conan Doyle, Edgar Poe ).
+                Les romans d'aventures et d'anticipation (Jules Verne, Franck Herbert, Arthur C.Clark, JRR Tolkien).
                 Les romans historiques sur la revolution, sur Napoléon Bonaparte 1er, et la seconde guerre mondiale et les camps de concentration.
                 Les livres sur les différentes religions monothéistes et polythéistes.
                 </p>
@@ -113,4 +120,5 @@
                 </p>
             </div>
         </div>
-        <?php include("inc/include_footer.php"); ?>
+        <?php //include("inc/include_footer.php"); ?>
+        ?>
